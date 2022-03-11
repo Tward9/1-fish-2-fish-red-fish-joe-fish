@@ -61,3 +61,4 @@ function getLocation(){
 
 
 $("#fishBtn").on("click", getLocation);
+
