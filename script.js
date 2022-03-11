@@ -2,7 +2,7 @@
 //can set to update with specific species in the future
 var fishURL = "https://cors-anywhere-bc.herokuapp.com/https://www.fishwatch.gov/api/species";
 var redSnapperURL = "https://cors-anywhere-bc.herokuapp.com/https://www.fishwatch.gov/api/species/red-snapper";
-var weather = 
+// var weather = 
 
 //querry fishwatch api
 function getFishAPI() {
@@ -14,10 +14,10 @@ function getFishAPI() {
     .then(function (fishData) {
       console.log(fishData);
       for (i = 0; i < fishData.length; i++) {
-        console.log(fishData[i].Location);
         console.log(fishData[i]['Species Name']);
+        console.log(fishData[i]['NOAA Fisheries Region']);
         //need to fix addition to table just for data display
-        $('#fishTable').append(`<tr><td>` +$(fishData[i].Location)+`</td><td>` +$(fishData[i]['Species Name'])+`</td></tr>`)
+        $('#fishTable').append(`<tr><td>` +$(fishData[i]['NOAA Fisheries Region'])+`</td><td>` +$(fishData[i]['Species Name'])+`</td></tr>`)
       }
     });
 }
