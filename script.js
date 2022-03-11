@@ -14,9 +14,8 @@ var weatherURL = "https://cors-anywhere-bc.herokuapp.com/http://api.weatherunloc
 var APIkeyWeather = "app_key=653627bc29b26515ff93a6d98e85de58";
 var appIDweather = "app_id=78fab2ab&";
 var picCurrent = $(`<img>`);
-var picDay1 = "";
-var picDay2 = "";
-var picDay3 = "";
+var picDay2 = $(`<img>`);
+var picDay3 = $(`<img>`);
 
 
 function getLocation(){
