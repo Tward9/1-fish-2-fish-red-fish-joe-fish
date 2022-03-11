@@ -27,17 +27,11 @@ function getFishAPI() {
                 $('#nameList').append($('<li/>').attr("id", 'item' + i + 'n').text(fish['Species Name']));
                 $('#regionList').append($('<li/>').attr("id", 'item' + i + 'r').text(fish['NOAA Fisheries Region']));
                 i++;
+                //add button to get fish facts
+                //button creates modal with info from fish api
+                //display fish image
             });
-            // for (i = 0; i < fishData.length; i++) {
-            //     console.log(fishData[i]['Species Name']);
-            //     console.log(fishData[i]['NOAA Fisheries Region']);
-
-            //     var fishName = $(fishData[i]['Species Name'])
-            //     var fishRegion = $(fishData[i]['NOAA Fisheries Region']);
-
-            //     $('#nameList').append($('<li/>').attr("id", 'item' + i + 'n').text($(fishData[i]['Species Name'])));
-            //     $('#regionList').append($('<li/>').attr("id", 'item' + i + 'r').text(fishRegion));
-            // }
+            
         });
 }
 
