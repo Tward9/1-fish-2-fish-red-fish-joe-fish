@@ -4,47 +4,55 @@ var fishURL = "https://cors-anywhere-bc.herokuapp.com/https://www.fishwatch.gov/
 var redSnapperURL = "https://cors-anywhere-bc.herokuapp.com/https://www.fishwatch.gov/api/species/red-snapper";
 
 // Weather API Info
-var weatherURL = "http://api.weatherunlocked.com/api/current/51.50,-0.12?app_id={78fab2ab}&app_key={653627bc29b26515ff93a6d98e85de58}"
-var APIkeyWeather = "653627bc29b26515ff93a6d98e85de58"
-var appIDweather = "78fab2ab"
+var cityName = "Chicago";
+// create separate input for statecode
+var state = "IL";
+var countryCode = ",US";
+var locationURL = "http://api.openweathermap.org/geo/1.0/direct?q=";
+var APIkeyLocation = "306e5a39201f9a04bf59daf2b8544d8a";
+var weatherURL = "https://cors-anywhere-bc.herokuapp.com/http://api.weatherunlocked.com/api/current/";
+var APIkeyWeather = "app_key=653627bc29b26515ff93a6d98e85de58";
+var appIDweather = "app_id=78fab2ab&";
 
 
-// query Weather API
-function getWeather() {
-  fetch(weatherURL).then(function (response) {
-    console.log("getting weather...")
+function getLocation(){
+  cityName = $("#userSearch").val();
+  state = $("#userState").val()
+  fetch(locationURL + cityName + "," + state + countryCode + "&limit=1&appid=" + APIkeyLocation)
+  .then(function (location) {
+    console.log("determining location...");
+    return location.json()
+  }).then(function (locationData) {
+    var lat = locationData[0].lat;
+    lat = lat.toFixed(2);
+    console.log(lat);
+    var lon = locationData[0].lon;
+    lon = lon.toFixed(2);
+    console.log(lon);
+    
+    getWeather(lat, lon);
+    
+    function getWeather() {
+      fetch(weatherURL + lat + "," +lon + "?" + appIDweather + APIkeyWeather)
+      .then(function (response) {
+        console.log("getting weather...")
+        return response.json();
+      })
+      .then(function (weatherData) {
+        // Append this info to weather dayBlocks
+        console.log(weatherData.wx_icon);
+        console.log(weatherData.temp_f);
+        console.log(weatherData.feelslike_f);
+        console.log(weatherData.humid_pct);
+        console.log(weatherData.windspd_mph);
+        console.log(weatherData.winddir_compass);
+      })
+    };
   })
+  // Returns to default values after getting location & weather data.
+  cityName = $("#userSearch").val("");
+  state = $("#userState").val("--")
 };
 
-//querry fishwatch api
-function getFishAPI() {
-  fetch(fishURL)
-    .then(function (response) {
-      console.log("fetched");
-      return response.json();
-    })
-    .then(function (fishData) {
-      console.log(fishData);
-      for (i = 0; i < fishData.length; i++) {
-        console.log(fishData[i]['Species Name']);
-        console.log(fishData[i]['NOAA Fisheries Region']);
-        //need to fix addition to table just for data display
-        $('#fishTable').append(`<tr><td>` +$(fishData[i]['NOAA Fisheries Region'])+`</td><td>` +$(fishData[i]['Species Name'])+`</td></tr>`)
-      }
-    });
-}
 
-function getredSnapperAPI() {
-  fetch(redSnapperURL)
-    .then(function (snapperResponse) {
-      console.log("fetched snapper");
-      return snapperResponse.json();
-    })
-    .then(function (redSnapperData) {
-      console.log(redSnapperData);
-      console.log(redSnapperData.Location);
-    });
-}
-
-$("#fishBtn").on("click", getFishAPI);
-$("#redSnapperBtn").on("click", getredSnapperAPI);
+$("#fishBtn").on("click", getLocation);
