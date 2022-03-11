@@ -13,6 +13,10 @@ var APIkeyLocation = "306e5a39201f9a04bf59daf2b8544d8a";
 var weatherURL = "https://cors-anywhere-bc.herokuapp.com/http://api.weatherunlocked.com/api/current/";
 var APIkeyWeather = "app_key=653627bc29b26515ff93a6d98e85de58";
 var appIDweather = "app_id=78fab2ab&";
+var picCurrent = $(`<img>`);
+var picDay1 = "";
+var picDay2 = "";
+var picDay3 = "";
 
 
 function getLocation(){
@@ -41,6 +45,7 @@ function getLocation(){
       .then(function (weatherData) {
         // Append this info to weather dayBlocks
         console.log(weatherData.wx_icon);
+        // $(picCurrent).attr("src", weatherData.wx_icon);
         console.log(weatherData.temp_f);
         console.log(weatherData.feelslike_f);
         console.log(weatherData.humid_pct);
