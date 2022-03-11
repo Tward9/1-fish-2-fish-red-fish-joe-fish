@@ -7,7 +7,20 @@
     <title>Water Weather Widget</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <!-- Tailwind -- USE AFTER DEFINING UTILITY CLASSES-->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    color: {
+                       
+                      
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -36,15 +49,32 @@
     </div>
     <article id="fishData">
         <p>Fish Data:</p>
-        <table>
+        <table id="fishTable">
             <th>
 
             </th>
-            <tbody id="fishTable">
+            <tbody>
 
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul id="nameList">
+
+                        </ul>
+                    </td>
+                    <td>
+                        <ul id="regionList">
+
+                        </ul>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </article>
 </body>
 <script src="script.js"></script>
+<script src="script2.js"></script>
 </html>
