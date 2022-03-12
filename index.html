@@ -94,7 +94,7 @@
         class="w-1/3 my-2 border-solid border-2 border-black-600"
         placeholder="Enter City"
       />
-      <div id="buttons" class="w-full flex my-5 block justify-center">
+      <div id="buttons" class="w-full flex my-5 justify-center">
         <button
           id="fishBtn"
           class="rounded-lg p-2 text-xl bg-emerald-300 border-solid border-2 border-gray-900"
@@ -106,12 +106,12 @@
     <h2 class="text-3xl">3-Day Forecast</h2>
     <div
       id="weatherData"
-      class="w-full inline-grid grid-cols-3 gap-5 place-content-center flex flex-col flex-wrap"
+      class="w-full inline-grid grid-cols-3 gap-5 place-content-center flex-col flex-wrap"
     >
       <!-- Make these display inline -->
       <div
         id="day1"
-        class="dayBlock object-left text-center border-solid border-4 border-gray-900 rounded-lg h-96 flex flex-wrap flex-1"
+        class="dayBlock text-2xl object-left text-center border-solid border-4 border-gray-900 rounded-lg h-96 flex flex-wrap flex-1"
       ></div>
       <script>
         var currentDate = dayjs().format(`dddd MMMM D, YYYY`);
@@ -119,7 +119,7 @@
       </script>
       <div
         id="day2"
-        class="dayBlock object-center text-center border-solid border-4 border-gray-900 rounded-lg flex flex-wrap flex-1"
+        class="dayBlock text-2xl object-center text-center border-solid border-4 border-gray-900 rounded-lg flex flex-wrap flex-1"
       >
       </div>
       <script>
@@ -128,7 +128,7 @@
       </script>
       <div
         id="day3"
-        class="dayBlock object-right text-center border-solid border-4 border-gray-900 rounded-lg flex flex-wrap flex-1"
+        class="dayBlock text-2xl object-right text-center border-solid border-4 border-gray-900 rounded-lg flex flex-wrap flex-1"
       >
       </div>
       <script>
