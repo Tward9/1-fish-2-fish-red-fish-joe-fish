@@ -44,7 +44,9 @@ function getLocation(){
       .then(function (weatherData) {
         // Append this info to weather dayBlocks
         console.log(weatherData.wx_icon);
-        // $(picCurrent).attr("src", weatherData.wx_icon);
+        let weatherIMG = weatherData.wx_icon
+        picCurrent = $(picCurrent).attr("src", `./Assets/Images/WeatherUnlocked/${weatherIMG}`);
+        $(picCurrent).appendTo("#day1");
         console.log(weatherData.temp_f);
         console.log(weatherData.feelslike_f);
         console.log(weatherData.humid_pct);
