@@ -69,14 +69,12 @@ function displayWeather() {
             // Retrieves and appends weather data from the first 3 days of the forecast.
             for (var i = 0; i < 3; i++) {
               var weatherIMG = weatherResponse.daily[i].weather[0].icon;
-              var tempHigh = weatherResponse.daily[i].temp.max;
-              var tempLow = weatherResponse.daily[i].temp.min;
+              var tempHigh = weatherResponse.daily[i].temp.max.toFixed();
+              var tempLow = weatherResponse.daily[i].temp.min.toFixed();
               var conditions = weatherResponse.daily[i].weather[0].description;
               var humidity = weatherResponse.daily[i].humidity;
               var windSpeed = weatherResponse.daily[i].wind_speed;
               var windDegree = weatherResponse.daily[i].wind_deg;
-
-              // var listData = $(`<li>`);
 
               if (i === 0) {
                 console.log("1");
@@ -91,10 +89,10 @@ function displayWeather() {
                 weatherList1 = $(weatherList1).attr("id", "day1data");
                 $(weatherList1).appendTo("#day1");
 
-                tempHigh = `<li>High: ${tempHigh}</li>`;
+                tempHigh = `<li>High: ${tempHigh}º</li>`;
                 $(tempHigh).appendTo("#day1data");
 
-                tempLow = `<li>Low: ${tempLow}</li>`;
+                tempLow = `<li>Low: ${tempLow}º</li>`;
                 $(tempLow).appendTo("#day1data");
 
                 conditions = `<li>${conditions}</li>`;
@@ -188,10 +186,10 @@ function displayWeather() {
                 weatherList2 = $(weatherList2).attr("id", "day2data");
                 $(weatherList2).appendTo("#day2");
 
-                tempHigh = `<li>High: ${tempHigh}</li>`;
+                tempHigh = `<li>High: ${tempHigh}º</li>`;
                 $(tempHigh).appendTo("#day2data");
 
-                tempLow = `<li>Low: ${tempLow}</li>`;
+                tempLow = `<li>Low: ${tempLow}º</li>`;
                 $(tempLow).appendTo("#day2data");
 
                 conditions = `<li>${conditions}</li>`;
@@ -284,10 +282,10 @@ function displayWeather() {
                 weatherList3 = $(weatherList3).attr("id", "day3data");
                 $(weatherList3).appendTo("#day3");
 
-                tempHigh = `<li>High: ${tempHigh}</li>`;
+                tempHigh = `<li>High: ${tempHigh}º</li>`;
                 $(tempHigh).appendTo("#day3data");
 
-                tempLow = `<li>Low: ${tempLow}</li>`;
+                tempLow = `<li>Low: ${tempLow}º</li>`;
                 $(tempLow).appendTo("#day3data");
 
                 conditions = `<li>${conditions}</li>`;
