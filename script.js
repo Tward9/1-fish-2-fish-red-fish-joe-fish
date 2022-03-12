@@ -16,11 +16,13 @@ var appIDweather = "app_id=78fab2ab&";
 var picCurrent = $(`<img>`);
 var picDay2 = $(`<img>`);
 var picDay3 = $(`<img>`);
+var statePic = 'IL'
 
 
 function getLocation(){
   cityName = $("#userSearch").val();
   state = $("#userState").val()
+  statePic = $("#userState").val();
   fetch(locationURL + cityName + "," + state + countryCode + "&limit=1&appid=" + APIkeyLocation)
   .then(function (location) {
     console.log("determining location...");
@@ -52,12 +54,12 @@ function getLocation(){
         console.log(weatherData.humid_pct);
         console.log(weatherData.windspd_mph);
         console.log(weatherData.winddir_compass);
+        state = $("#userState").val("--")
       })
     };
   })
   // Returns to default values after getting location & weather data.
   cityName = $("#userSearch").val("");
-  state = $("#userState").val("--")
 };
 
 

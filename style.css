@@ -19,6 +19,11 @@ p {
 button {
     padding: 0 20px;
 }
+#regionHeader, #btnHeader{
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
 
 
 module.exports = {
