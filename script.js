@@ -174,7 +174,7 @@ function displayWeather() {
                 } else {
                   direction = `NNW`;
                 }
-                windDegree = `<li>${direction}</li>`;
+                windDegree = `<li>Wind Directon: ${direction}</li>`;
                 $(windDegree).appendTo("#day1data");
               } else if (i === 1) {
                 console.log("2");
