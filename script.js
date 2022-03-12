@@ -40,7 +40,7 @@ function displayWeather(){
     
     // Uses latitude & longitude values to get a forecast for the location.
     function getWeather() {
-      var weatherIcon = `http://openweathermap.org/img/wn/`
+      var weatherIcon = `https://openweathermap.org/img/wn/`
       fetch(weatherURL + lat + "&lon=" + lon + "&exclude=minutely,hourly&units=imperial&lang=en&appid=" + APIkeyWeather)
       .then(function (response) {
         console.log("getting weather...")
