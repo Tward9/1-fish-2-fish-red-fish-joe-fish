@@ -75,7 +75,7 @@ function displayWeather() {
               var humidity = weatherResponse.daily[i].humidity;
               var windSpeed = weatherResponse.daily[i].wind_speed;
               var windDegree = weatherResponse.daily[i].wind_deg;
-              
+
               // var listData = $(`<li>`);
 
               if (i === 0) {
@@ -94,19 +94,87 @@ function displayWeather() {
                 tempHigh = `<li>High: ${tempHigh}</li>`;
                 $(tempHigh).appendTo("#day1data");
 
-                tempLow = `<li>Low: ${tempLow}</li>`
+                tempLow = `<li>Low: ${tempLow}</li>`;
                 $(tempLow).appendTo("#day1data");
 
-                conditions  = `<li>${conditions}</li>`
+                conditions = `<li>${conditions}</li>`;
                 $(conditions).appendTo("#day1data");
 
-                humidity  = `<li>${humidity}%</li>`
+                humidity = `<li>Humidity: ${humidity}%</li>`;
                 $(humidity).appendTo("#day1data");
 
-                windSpeed  = `<li>${windSpeed} MPH</li>`
+                windSpeed = `<li>Wind Speed: ${windSpeed} MPH</li>`;
                 $(windSpeed).appendTo("#day1data");
 
-                windDegree  = `<li>${windDegree}º</li>`
+                windDegree = `<li>Wind Direction: ${windDegree}º</li>`;
+
+                if ($(windDegree).txt <= 11 || $(windDegree).txt >= 349) {
+                  var direction = `N`;
+                } else if ($(windDegree).txt >= 12 && $(windDegree).txt <= 33) {
+                  direction = `NNE`;
+                } else if ($(windDegree).txt >= 34 && $(windDegree).txt <= 56) {
+                  direction = `NE`;
+                } else if ($(windDegree).txt >= 57 && $(windDegree).txt <= 78) {
+                  direction = `ENE`;
+                } else if (
+                  $(windDegree).txt >= 79 &&
+                  $(windDegree).txt <= 101
+                ) {
+                  direction = `E`;
+                } else if (
+                  $(windDegree).txt >= 102 &&
+                  $(windDegree).txt <= 123
+                ) {
+                  direction = `ESE`;
+                } else if (
+                  $(windDegree).txt >= 124 &&
+                  $(windDegree).txt <= 146
+                ) {
+                  direction = `SE`;
+                } else if (
+                  $(windDegree).txt >= 147 &&
+                  $(windDegree).txt <= 168
+                ) {
+                  direction = `SSE`;
+                } else if (
+                  $(windDegree).txt >= 169 &&
+                  $(windDegree).txt <= 191
+                ) {
+                  direction = `S`;
+                } else if (
+                  $(windDegree).txt >= 192 &&
+                  $(windDegree).txt <= 213
+                ) {
+                  direction = `SSW`;
+                } else if (
+                  $(windDegree).txt >= 214 &&
+                  $(windDegree).txt <= 236
+                ) {
+                  direction = `SW`;
+                } else if (
+                  $(windDegree).txt >= 237 &&
+                  $(windDegree).txt <= 258
+                ) {
+                  direction = `WSW`;
+                } else if (
+                  $(windDegree).txt >= 259 &&
+                  $(windDegree).txt <= 281
+                ) {
+                  direction = `W`;
+                } else if (
+                  $(windDegree).txt >= 282 &&
+                  $(windDegree).txt <= 303
+                ) {
+                  direction = `WNW`;
+                } else if (
+                  $(windDegree).txt >= 304 &&
+                  $(windDegree).txt <= 326
+                ) {
+                  direction = `NW`;
+                } else {
+                  direction = `NNW`;
+                }
+                windDegree = `<li>${direction}</li>`;
                 $(windDegree).appendTo("#day1data");
               } else if (i === 1) {
                 console.log("2");
@@ -123,19 +191,86 @@ function displayWeather() {
                 tempHigh = `<li>High: ${tempHigh}</li>`;
                 $(tempHigh).appendTo("#day2data");
 
-                tempLow = `<li>Low: ${tempLow}</li>`
+                tempLow = `<li>Low: ${tempLow}</li>`;
                 $(tempLow).appendTo("#day2data");
 
-                conditions  = `<li>${conditions}</li>`
+                conditions = `<li>${conditions}</li>`;
                 $(conditions).appendTo("#day2data");
 
-                humidity  = `<li>${humidity}%</li>`
+                humidity = `<li>Humidity: ${humidity}%</li>`;
                 $(humidity).appendTo("#day2data");
 
-                windSpeed  = `<li>${windSpeed} MPH</li>`
+                windSpeed = `<li>Wind Speed: ${windSpeed} MPH</li>`;
                 $(windSpeed).appendTo("#day2data");
 
-                windDegree  = `<li>${windDegree}º</li>`
+                windDegree = `<li>${windDegree}º</li>`;
+                if ($(windDegree).txt <= 11 || $(windDegree).txt >= 349) {
+                  var direction = `N`;
+                } else if ($(windDegree).txt >= 12 && $(windDegree).txt <= 33) {
+                  direction = `NNE`;
+                } else if ($(windDegree).txt >= 34 && $(windDegree).txt <= 56) {
+                  direction = `NE`;
+                } else if ($(windDegree).txt >= 57 && $(windDegree).txt <= 78) {
+                  direction = `ENE`;
+                } else if (
+                  $(windDegree).txt >= 79 &&
+                  $(windDegree).txt <= 101
+                ) {
+                  direction = `E`;
+                } else if (
+                  $(windDegree).txt >= 102 &&
+                  $(windDegree).txt <= 123
+                ) {
+                  direction = `ESE`;
+                } else if (
+                  $(windDegree).txt >= 124 &&
+                  $(windDegree).txt <= 146
+                ) {
+                  direction = `SE`;
+                } else if (
+                  $(windDegree).txt >= 147 &&
+                  $(windDegree).txt <= 168
+                ) {
+                  direction = `SSE`;
+                } else if (
+                  $(windDegree).txt >= 169 &&
+                  $(windDegree).txt <= 191
+                ) {
+                  direction = `S`;
+                } else if (
+                  $(windDegree).txt >= 192 &&
+                  $(windDegree).txt <= 213
+                ) {
+                  direction = `SSW`;
+                } else if (
+                  $(windDegree).txt >= 214 &&
+                  $(windDegree).txt <= 236
+                ) {
+                  direction = `SW`;
+                } else if (
+                  $(windDegree).txt >= 237 &&
+                  $(windDegree).txt <= 258
+                ) {
+                  direction = `WSW`;
+                } else if (
+                  $(windDegree).txt >= 259 &&
+                  $(windDegree).txt <= 281
+                ) {
+                  direction = `W`;
+                } else if (
+                  $(windDegree).txt >= 282 &&
+                  $(windDegree).txt <= 303
+                ) {
+                  direction = `WNW`;
+                } else if (
+                  $(windDegree).txt >= 304 &&
+                  $(windDegree).txt <= 326
+                ) {
+                  direction = `NW`;
+                } else {
+                  direction = `NNW`;
+                }
+                windDegree = `<li>Wind Direction: ${direction}</li>`;
                 $(windDegree).appendTo("#day2data");
               } else if (i === 2) {
                 console.log("3");
@@ -152,19 +287,86 @@ function displayWeather() {
                 tempHigh = `<li>High: ${tempHigh}</li>`;
                 $(tempHigh).appendTo("#day3data");
 
-                tempLow = `<li>Low: ${tempLow}</li>`
+                tempLow = `<li>Low: ${tempLow}</li>`;
                 $(tempLow).appendTo("#day3data");
 
-                conditions  = `<li>${conditions}</li>`
+                conditions = `<li>${conditions}</li>`;
                 $(conditions).appendTo("#day3data");
 
-                humidity  = `<li>${humidity}%</li>`
+                humidity = `<li>Humidity: ${humidity}%</li>`;
                 $(humidity).appendTo("#day3data");
 
-                windSpeed  = `<li>${windSpeed} MPH</li>`
+                windSpeed = `<li>Wind Speed: ${windSpeed} MPH</li>`;
                 $(windSpeed).appendTo("#day3data");
 
-                windDegree  = `<li>${windDegree}º</li>`
+                windDegree = `<li>${windDegree}º</li>`;
+                if ($(windDegree).txt <= 11 || $(windDegree).txt >= 349) {
+                  var direction = `N`;
+                } else if ($(windDegree).txt >= 12 && $(windDegree).txt <= 33) {
+                  direction = `NNE`;
+                } else if ($(windDegree).txt >= 34 && $(windDegree).txt <= 56) {
+                  direction = `NE`;
+                } else if ($(windDegree).txt >= 57 && $(windDegree).txt <= 78) {
+                  direction = `ENE`;
+                } else if (
+                  $(windDegree).txt >= 79 &&
+                  $(windDegree).txt <= 101
+                ) {
+                  direction = `E`;
+                } else if (
+                  $(windDegree).txt >= 102 &&
+                  $(windDegree).txt <= 123
+                ) {
+                  direction = `ESE`;
+                } else if (
+                  $(windDegree).txt >= 124 &&
+                  $(windDegree).txt <= 146
+                ) {
+                  direction = `SE`;
+                } else if (
+                  $(windDegree).txt >= 147 &&
+                  $(windDegree).txt <= 168
+                ) {
+                  direction = `SSE`;
+                } else if (
+                  $(windDegree).txt >= 169 &&
+                  $(windDegree).txt <= 191
+                ) {
+                  direction = `S`;
+                } else if (
+                  $(windDegree).txt >= 192 &&
+                  $(windDegree).txt <= 213
+                ) {
+                  direction = `SSW`;
+                } else if (
+                  $(windDegree).txt >= 214 &&
+                  $(windDegree).txt <= 236
+                ) {
+                  direction = `SW`;
+                } else if (
+                  $(windDegree).txt >= 237 &&
+                  $(windDegree).txt <= 258
+                ) {
+                  direction = `WSW`;
+                } else if (
+                  $(windDegree).txt >= 259 &&
+                  $(windDegree).txt <= 281
+                ) {
+                  direction = `W`;
+                } else if (
+                  $(windDegree).txt >= 282 &&
+                  $(windDegree).txt <= 303
+                ) {
+                  direction = `WNW`;
+                } else if (
+                  $(windDegree).txt >= 304 &&
+                  $(windDegree).txt <= 326
+                ) {
+                  direction = `NW`;
+                } else {
+                  direction = `NNW`;
+                }
+                windDegree = `<li>Wind Direction: ${direction}</li>`;
                 $(windDegree).appendTo("#day3data");
               }
             }
