@@ -21,6 +21,7 @@ var weatherList = $(`<ul>`);
 
 
 function displayWeather(){
+  
   // Gets location from user input and converts to latitude & longitude.
   cityName = $("#userSearch").val();
   state = $("#userState").val()
@@ -37,7 +38,7 @@ function displayWeather(){
     console.log(lon);
     
     getWeather(lat, lon);
-    
+    $("#day3data").empty();
     // Uses latitude & longitude values to get a forecast for the location.
     function getWeather() {
       var weatherIcon = `https://openweathermap.org/img/wn/`
