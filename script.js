@@ -19,59 +19,13 @@ var APIkeyWeather = "c443fd962d906a14e3af8d9d37623de2";
 var picCurrent = $(`<img>`);
 var picDay2 = $(`<img>`);
 var picDay3 = $(`<img>`);
-<<<<<<< HEAD
-var statePic = 'IL'
-=======
 var weatherList1 = $(`<ul>`);
 var weatherList2 = $(`<ul>`);
 var weatherList3 = $(`<ul>`);
->>>>>>> 2f94f7cfc0aaff76d28dfdf42e679c383632bb08
 
 function displayWeather() {
   // Gets location from user input and converts to latitude & longitude.
   cityName = $("#userSearch").val();
-<<<<<<< HEAD
-  state = $("#userState").val()
-  statePic = $("#userState").val();
-  fetch(locationURL + cityName + "," + state + countryCode + "&limit=1&appid=" + APIkeyLocation)
-  .then(function (location) {
-    console.log("determining location...");
-    return location.json()
-  }).then(function (locationData) {
-    var lat = locationData[0].lat;
-    lat = lat.toFixed(2);
-    console.log(lat);
-    var lon = locationData[0].lon;
-    lon = lon.toFixed(2);
-    console.log(lon);
-    
-    getWeather(lat, lon);
-    
-    function getWeather() {
-      fetch(weatherURL + lat + "," +lon + "?" + appIDweather + APIkeyWeather)
-      .then(function (response) {
-        console.log("getting weather...")
-        return response.json();
-      })
-      .then(function (weatherData) {
-        // Append this info to weather dayBlocks
-        console.log(weatherData.wx_icon);
-        let weatherIMG = weatherData.wx_icon
-        picCurrent = $(picCurrent).attr("src", `./Assets/Images/WeatherUnlocked/${weatherIMG}`);
-        $(picCurrent).appendTo("#day1");
-        console.log(weatherData.temp_f);
-        console.log(weatherData.feelslike_f);
-        console.log(weatherData.humid_pct);
-        console.log(weatherData.windspd_mph);
-        console.log(weatherData.winddir_compass);
-        state = $("#userState").val("--")
-      })
-    };
-  })
-  // Returns to default values after getting location & weather data.
-  cityName = $("#userSearch").val("");
-};
-=======
   state = $("#userState").val();
   fetch(
     locationURL +
@@ -231,7 +185,6 @@ function displayWeather() {
                 // creates & appends items to list
                 weatherList2 = $(weatherList2).attr("id", "day2data");
                 $(weatherList2).appendTo("#day2");
->>>>>>> 2f94f7cfc0aaff76d28dfdf42e679c383632bb08
 
                 tempHigh = `<li>High: ${tempHigh}º</li>`;
                 $(tempHigh).appendTo("#day2data");
@@ -413,6 +366,7 @@ function displayWeather() {
                 }
                 windDegree = `<li>Wind Direction: ${direction}</li>`;
                 $(windDegree).appendTo("#day3data");
+                state = $("#userState").val("--");
               }
             }
           });
@@ -420,7 +374,6 @@ function displayWeather() {
     });
   // Returns to default values after getting location & weather data.
   cityName = $("#userSearch").val("");
-  state = $("#userState").val("--");
 }
 
 $("#fishBtn").on("click", displayWeather);
