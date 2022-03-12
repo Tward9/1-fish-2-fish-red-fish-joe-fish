@@ -16,9 +16,9 @@ var APIkeyLocation = "306e5a39201f9a04bf59daf2b8544d8a";
 // weather:
 var weatherURL = "https://api.openweathermap.org/data/2.5/onecall?lat=";
 var APIkeyWeather = "c443fd962d906a14e3af8d9d37623de2";
-var picCurrent = $(`<img>`);
-var picDay2 = $(`<img>`);
-var picDay3 = $(`<img>`);
+var picCurrent = $(`<img class="object-scale-down h-50 w-50">`);
+var picDay2 = $(`<img class="object-scale-down h-50 w-50">`);
+var picDay3 = $(`<img class="object-scale-down h-50 w-50">`);
 var weatherList1 = $(`<ul>`);
 var weatherList2 = $(`<ul>`);
 var weatherList3 = $(`<ul>`);
