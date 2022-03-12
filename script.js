@@ -9,7 +9,7 @@ var redSnapperURL = "https://cors-anywhere-bc.herokuapp.com/https://www.fishwatc
 var cityName = "";
 var state = "";
 var countryCode = ",US";
-var locationURL = "http://api.openweathermap.org/geo/1.0/direct?q=";
+var locationURL = "https://api.openweathermap.org/geo/1.0/direct?q=";
 var APIkeyLocation = "306e5a39201f9a04bf59daf2b8544d8a";
 // weather:
 var weatherURL = "https://api.openweathermap.org/data/2.5/onecall?lat=";
