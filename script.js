@@ -76,7 +76,7 @@ function displayWeather() {
               var windSpeed = weatherResponse.daily[i].wind_speed;
               var windDegree = weatherResponse.daily[i].wind_deg;
               
-              var listData = $(`<li>`);
+              // var listData = $(`<li>`);
 
               if (i === 0) {
                 console.log("1");
@@ -91,26 +91,23 @@ function displayWeather() {
                 weatherList1 = $(weatherList1).attr("id", "day1data");
                 $(weatherList1).appendTo("#day1");
 
-                listData = $(listData).text(tempHigh);
-                $(listData).appendTo("#day1data");
+                tempHigh = `<li>High: ${tempHigh}</li>`;
+                $(tempHigh).appendTo("#day1data");
 
-                tempLow = `<li>${tempLow}</li>`
+                tempLow = `<li>Low: ${tempLow}</li>`
                 $(tempLow).appendTo("#day1data");
 
-                // listData = $(listData).text(tempLow);
-                // $(listData).appendTo("#day1data");
+                conditions  = `<li>${conditions}</li>`
+                $(conditions).appendTo("#day1data");
 
-                // listData = $(listData).val(conditions);
-                // $(listData).appendTo("#day1data");
+                humidity  = `<li>${humidity}%</li>`
+                $(humidity).appendTo("#day1data");
 
-                // listData = $(listData).val(humidity);
-                // $(listData).appendTo("#day1data");
+                windSpeed  = `<li>${windSpeed} MPH</li>`
+                $(windSpeed).appendTo("#day1data");
 
-                // listData = $(listData).val(windSpeed);
-                // $(listData).appendTo("#day1data");
-
-                // listData = $(listData).val(windDegree);
-                // $(listData).appendTo("#day1data");
+                windDegree  = `<li>${windDegree}º</li>`
+                $(windDegree).appendTo("#day1data");
               } else if (i === 1) {
                 console.log("2");
                 picCurrent = $(picDay2).attr(
@@ -123,8 +120,23 @@ function displayWeather() {
                 weatherList2 = $(weatherList2).attr("id", "day2data");
                 $(weatherList2).appendTo("#day2");
 
-                listData = $(listData).text(tempHigh);
-                $(listData).appendTo("#day2data");
+                tempHigh = `<li>High: ${tempHigh}</li>`;
+                $(tempHigh).appendTo("#day2data");
+
+                tempLow = `<li>Low: ${tempLow}</li>`
+                $(tempLow).appendTo("#day2data");
+
+                conditions  = `<li>${conditions}</li>`
+                $(conditions).appendTo("#day2data");
+
+                humidity  = `<li>${humidity}%</li>`
+                $(humidity).appendTo("#day2data");
+
+                windSpeed  = `<li>${windSpeed} MPH</li>`
+                $(windSpeed).appendTo("#day2data");
+
+                windDegree  = `<li>${windDegree}º</li>`
+                $(windDegree).appendTo("#day2data");
               } else if (i === 2) {
                 console.log("3");
                 picCurrent = $(picDay3).attr(
@@ -137,8 +149,23 @@ function displayWeather() {
                 weatherList3 = $(weatherList3).attr("id", "day3data");
                 $(weatherList3).appendTo("#day3");
 
-                listData = $(listData).text(tempHigh);
-                $(listData).appendTo("#day3data");
+                tempHigh = `<li>High: ${tempHigh}</li>`;
+                $(tempHigh).appendTo("#day3data");
+
+                tempLow = `<li>Low: ${tempLow}</li>`
+                $(tempLow).appendTo("#day3data");
+
+                conditions  = `<li>${conditions}</li>`
+                $(conditions).appendTo("#day3data");
+
+                humidity  = `<li>${humidity}%</li>`
+                $(humidity).appendTo("#day3data");
+
+                windSpeed  = `<li>${windSpeed} MPH</li>`
+                $(windSpeed).appendTo("#day3data");
+
+                windDegree  = `<li>${windDegree}º</li>`
+                $(windDegree).appendTo("#day3data");
               }
             }
           });
