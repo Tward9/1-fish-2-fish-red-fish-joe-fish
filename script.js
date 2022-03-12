@@ -49,6 +49,8 @@ function displayWeather() {
       console.log(lon);
 
       getWeather(lat, lon);
+      $("#day1data").empty();
+      $("#day2data").empty();
       $("#day3data").empty();
       // Uses latitude & longitude values to get a forecast for the location.
       function getWeather() {
