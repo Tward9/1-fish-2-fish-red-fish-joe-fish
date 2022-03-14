@@ -112,15 +112,15 @@
       <!-- Make these display inline -->
       <div
         id="day1"
-        class="dayBlock text-2xl object-left text-center border-solid border-4 border-gray-900 rounded-lg h-96 flex flex-wrap flex-1"
-      ></div>
+        class="dayBlock text-2xl object-left text-center border-solid border-4 border-gray-900 rounded-lg h-96 flex flex-wrap flex-col flex-1">
+      </div>
       <script>
         var currentDate = dayjs().format(`dddd MMMM D, YYYY`);
         document.getElementById("day1").innerHTML = `${currentDate}`;
       </script>
       <div
         id="day2"
-        class="dayBlock text-2xl object-center text-center border-solid border-4 border-gray-900 rounded-lg flex flex-wrap flex-1"
+        class="dayBlock text-2xl object-center text-center border-solid border-4 border-gray-900 rounded-lg flex flex-wrap flex-col flex-1"
       >
       </div>
       <script>
@@ -129,7 +129,7 @@
       </script>
       <div
         id="day3"
-        class="dayBlock text-2xl object-right text-center border-solid border-4 border-gray-900 rounded-lg flex flex-wrap flex-1"
+        class="dayBlock text-2xl object-right text-center border-solid border-4 border-gray-900 rounded-lg flex flex-wrap flex-col flex-1"
       >
       </div>
       <script>

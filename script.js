@@ -16,9 +16,9 @@ var APIkeyLocation = "306e5a39201f9a04bf59daf2b8544d8a";
 // weather:
 var weatherURL = "https://api.openweathermap.org/data/2.5/onecall?lat=";
 var APIkeyWeather = "c443fd962d906a14e3af8d9d37623de2";
-var picCurrent = $(`<img class="relative inset-x-0 top-0 h-16 ... object-scale-down">`);
-var picDay2 = $(`<img class="object-scale-down">`);
-var picDay3 = $(`<img class="object-scale-down">`);
+var picCurrent = $(`<img class="w-1/4 h-full mt-5 mb-10">`);
+var picDay2 = $(`<img class="w-1/4 h-full mt-5 mb-10">`);
+var picDay3 = $(`<img class="w-1/4 h-full mt-5 mb-10">`);
 var weatherList1 = $(`<ul>`);
 var weatherList2 = $(`<ul>`);
 var weatherList3 = $(`<ul>`);
@@ -81,7 +81,7 @@ function displayWeather() {
               if (i === 0) {
                 console.log("1");
                 // retrieves weather icon & appends to weather block
-                picCurrent = $(picCurrent).attr(
+                picCurrent = $(picCurrent).addClass("h-11").attr(
                   "src",
                   `${weatherIcon}${weatherIMG}.png`
                 );
@@ -178,7 +178,7 @@ function displayWeather() {
                 $(windDegree).appendTo("#day1data");
               } else if (i === 1) {
                 console.log("2");
-                picCurrent = $(picDay2).attr(
+                picCurrent = $(picDay2).addClass("h-11").attr(
                   "src",
                   `${weatherIcon}${weatherIMG}.png`
                 );
@@ -274,7 +274,7 @@ function displayWeather() {
                 $(windDegree).appendTo("#day2data");
               } else if (i === 2) {
                 console.log("3");
-                picCurrent = $(picDay3).attr(
+                picCurrent = $(picDay3).addClass("h-11").attr(
                   "src",
                   `${weatherIcon}${weatherIMG}.png`
                 );
