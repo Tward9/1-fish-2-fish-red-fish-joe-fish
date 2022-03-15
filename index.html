@@ -46,9 +46,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="bg-blue-300 object overflow-x-hidden">
-    <header class="bg-blue-600">
-      <h1 class="text-4xl text-center py-3 font-heading text-white">
+  <body class="bg-cyan-400 object overflow-x-hidden">
+    <header class="bg-cyan-700">
+      <h1 class="text-5xl text-center py-3 font-heading text-white">
         One fish, Two fish, Red Fish, Go Fish?
       </h1>
     </header>
@@ -122,13 +122,13 @@
       <div id="buttons" class="w-full flex my-5 justify-center">
         <button
           id="fishBtn"
-          class="rounded-lg p-2 text-xl bg-emerald-100 border-solid border-2 border-gray-900"
+          class="rounded-lg p-2 text-xl bg-cyan-700 border-solid border-2 border-gray-900"
         >
           Search
         </button>
       </div>
     </div>
-    <h2 class="text-3xl mx-2.5 font-heading pb-5">3-Day Forecast:</h2>
+    <h2 class="text-4xl mx-2.5 font-heading pb-5">3-Day Forecast:</h2>
     <div
       id="weatherData"
       class="w-7/8 mx-2 flex grid-cols-3 gap-2 place-content-center flex-row flex-wrap"
@@ -136,7 +136,7 @@
       <!-- Make these display inline -->
       <div
         id="day1"
-        class="dayBlock bg-emerald-100 text-1xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-96 flex flex-wrap flex-col flex-1"
+        class="dayBlock bg-cyan-700 text-1xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-80 flex flex-wrap flex-col flex-1"
       ></div>
       <script>
         var currentDate = dayjs().format(`dddd MMMM D, YYYY`);
@@ -144,7 +144,7 @@
       </script>
       <div
         id="day2"
-        class="dayBlock bg-emerald-100 text-1xl font-info pt-2.5 object-center text-center border-solid border-4 border-gray-900 rounded-lg flex flex-wrap flex-col flex-1"
+        class="dayBlock bg-cyan-700 text-1xl font-info pt-2.5 object-center text-center border-solid border-4 border-gray-900 rounded-lg flex flex-wrap flex-col flex-1"
       ></div>
       <script>
         var tomorrowDate = dayjs().add(1, `d`).format(`dddd MMMM D, YYYY`);
@@ -152,7 +152,7 @@
       </script>
       <div
         id="day3"
-        class="dayBlock bg-emerald-100 text-1xl font-info pt-2.5 object-right text-center border-solid border-4 border-gray-900 rounded-lg flex flex-wrap flex-col flex-1"
+        class="dayBlock bg-cyan-700 text-1xl font-info pt-2.5 object-right text-center border-solid border-4 border-gray-900 rounded-lg flex flex-wrap flex-col flex-1"
       ></div>
       <script>
         var dayAfterTomorrowDate = dayjs()
@@ -161,7 +161,7 @@
         document.getElementById("day3").innerHTML = `${dayAfterTomorrowDate}`;
       </script>
     </div>
-    <article id="fishData" class="text-3xl font-heading">
+    <article id="fishData" class="text-4xl font-heading">
       <p class="mx-2.5">Fish Data:</p>
       <table id="fishTable" class="text-base font-info">
         <tbody>
