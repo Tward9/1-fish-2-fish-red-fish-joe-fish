@@ -1,0 +1,1 @@
+// All of the custom styling is applied via the tailwind.config in the HTML file.
