@@ -46,16 +46,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="bg-blue-300 object overflow-x-hidden">
-    <header class="bg-blue-600">
-      <h1 class="text-4xl text-center py-3 font-heading text-white">
+  <body class="bg-blue-200 object overflow-x-hidden">
+    <header class="bg-emerald-100 border-solid border border-gray-900">
+      <h1 class="text-4xl text-center py-3 font-heading text-black">
         One fish, Two fish, Red Fish, Go Fish?
       </h1>
     </header>
-    <div id="search" class="w-full p-2.5 flex flex-col items-center">
+    <div id="search" class="w-full pt-2.5 flex flex-col items-center">
       <!-- insert relevant elements -->
       <h2 class="text-2xl font-info">Is today a good day to fish?</h2>
-      <p class="text-1xl font-info">Enter your state and city. We'll show you the weather and some fish species in your region.</p>
+      <p class="text-xl font-info">Enter your state and city. We'll show you the weather and some fish species in your region.</p>
       <select
         id="userState"
         class="m-2.5 rounded-lg shadow-sm focus:outline-none focus:border-blue-300 focus:ring-1"
@@ -128,12 +128,12 @@
         </button>
       </div>
     </div>
-    <h2 class="text-3xl mx-2.5 font-heading pb-5">3-Day Forecast:</h2>
+    <h2 id="3-dayForecast" class="text-3xl mx-2.5 font-heading pb-5">3-Day Forecast:</h2>
     <div
       id="weatherData"
       class="w-7/8 mx-2 flex grid-cols-3 gap-2 place-content-center flex-row flex-wrap"
     >
-      <!-- Make these display inline -->
+
       <div
         id="day1"
         class="dayBlock bg-emerald-100 text-1xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-96 flex flex-wrap flex-col flex-1"
