@@ -253,7 +253,7 @@ function getFishAPI() {
                         }
                         
                     }
-                    if (statePic == 'Al') {
+                    if (statePic == 'AL') {
                         if (fish['Source'].includes('to Texas') ){
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
@@ -411,7 +411,7 @@ function getFishAPI() {
                     var test = fish;
                     console.log(fish['Source'], fish['Species Name']);
                     
-                    if (statePic == 'ME' || statePic == 'VT' || statePic == 'NH') { 
+                    if (statePic == 'ME' || statePic == 'NH') { 
                         if (fish['Source'].includes('from New England') ){
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
