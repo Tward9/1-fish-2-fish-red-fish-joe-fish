@@ -20,8 +20,11 @@ var picCurrent = $(`<img class="object-scale-down">`);
 var picDay2 = $(`<img class="object-scale-down">`);
 var picDay3 = $(`<img class="object-scale-down">`);
 var weatherList1 = $(`<ul>`);
+var weatherDetails1 = $(`<ul>`);
 var weatherList2 = $(`<ul>`);
+var weatherDetails2 = $(`<ul>`);
 var weatherList3 = $(`<ul>`);
+var weatherDetails3 = $(`<ul>`);
 
 function displayWeather() {
   // Gets location from user input and converts to latitude & longitude.
@@ -52,6 +55,9 @@ function displayWeather() {
       $("#day1data").empty();
       $("#day2data").empty();
       $("#day3data").empty();
+      $("#day1details").empty();
+      $("#day2details").empty();
+      $("#day3details").empty();
       // Uses latitude & longitude values to get a forecast for the location.
       function getWeather() {
         var weatherIcon = `https://openweathermap.org/img/wn/`;
@@ -91,22 +97,26 @@ function displayWeather() {
                 weatherList1 = $(weatherList1).attr("id", "day1data");
                 $(weatherList1).appendTo("#day1");
 
-                tempHigh = `<li class="text-base font-info text-white">High: ${tempHigh}º</li>`;
+                weatherDetails1 = $(weatherDetails1).attr("id", "day1details")
+                $(weatherDetails1).appendTo("#day1dataBlock")
+
+                tempHigh = `<li class="text-xs font-info list-none">High: ${tempHigh}º</li>`;
                 $(tempHigh).appendTo("#day1data");
 
-                tempLow = `<li class="text-base font-info text-white">Low: ${tempLow}º</li>`;
+                tempLow = `<li class="text-xs font-info list-none">Low: ${tempLow}º</li>`;
                 $(tempLow).appendTo("#day1data");
 
-                conditions = `<li class="text-base font-info text-white">${conditions}</li>`;
-                $(conditions).appendTo("#day1data");
 
-                humidity = `<li class="text-base font-info text-white">Humidity: ${humidity}%</li>`;
-                $(humidity).appendTo("#day1data");
+                conditions = `<li class="text-xs font-info list-none">${conditions}</li>`;
+                $(conditions).appendTo("#day1details");
 
-                windSpeed = `<li class="text-base font-info text-white">Wind Speed: ${windSpeed} MPH</li>`;
-                $(windSpeed).appendTo("#day1data");
+                humidity = `<li class="text-xs font-info list-none">Humidity: ${humidity}%</li>`;
+                $(humidity).appendTo("#day1details");
 
-                windDegree = `<li class="text-base font-info text-white">Wind Direction: ${windDegree}º</li>`;
+                windSpeed = `<li class="text-xs font-info list-none">Wind Speed: ${windSpeed} MPH</li>`;
+                $(windSpeed).appendTo("#day1details");
+
+                windDegree = `<li class="text-xs font-info list-none">Wind Direction: ${windDegree}º</li>`;
 
                 if ($(windDegree).txt <= 11 || $(windDegree).txt >= 349) {
                   var direction = `N`;
@@ -174,8 +184,8 @@ function displayWeather() {
                 } else {
                   direction = `NNW`;
                 }
-                windDegree = `<li class="text-base font-info text-white">Wind Directon: ${direction}</li>`;
-                $(windDegree).appendTo("#day1data");
+                windDegree = `<li class="text-xs font-info list-none">Wind Directon: ${direction}</li>`;
+                $(windDegree).appendTo("#day1details");
               } else if (i === 1) {
                 console.log("2");
                 picCurrent = $(picDay2).addClass("h-11").attr(
@@ -188,22 +198,25 @@ function displayWeather() {
                 weatherList2 = $(weatherList2).attr("id", "day2data");
                 $(weatherList2).appendTo("#day2");
 
-                tempHigh = `<li class="text-base font-info text-white">High: ${tempHigh}º</li>`;
+                weatherDetails2 = $(weatherDetails2).attr("id", "day2details")
+                $(weatherDetails2).appendTo("#day2dataBlock")
+
+                tempHigh = `<li class="text-xs font-info list-none">High: ${tempHigh}º</li>`;
                 $(tempHigh).appendTo("#day2data");
 
-                tempLow = `<li class="text-base font-info text-white">Low: ${tempLow}º</li>`;
+                tempLow = `<li class="text-xs font-info list-none">Low: ${tempLow}º</li>`;
                 $(tempLow).appendTo("#day2data");
+                
+                conditions = `<li class="text-xs font-info list-none">${conditions}</li>`;
+                $(conditions).appendTo("#day2details");
 
-                conditions = `<li class="text-base font-info text-white">${conditions}</li>`;
-                $(conditions).appendTo("#day2data");
+                humidity = `<li class="text-xs font-info list-none">Humidity: ${humidity}%</li>`;
+                $(humidity).appendTo("#day2details");
 
-                humidity = `<li class="text-base font-info text-white">Humidity: ${humidity}%</li>`;
-                $(humidity).appendTo("#day2data");
+                windSpeed = `<li class="text-xs font-info list-none">Wind Speed: ${windSpeed} MPH</li>`;
+                $(windSpeed).appendTo("#day2details");
 
-                windSpeed = `<li class="text-base font-info text-white">Wind Speed: ${windSpeed} MPH</li>`;
-                $(windSpeed).appendTo("#day2data");
-
-                windDegree = `<li class="text-base font-info text-white">${windDegree}º</li>`;
+                windDegree = `<li class="text-xs font-info list-none">${windDegree}º</li>`;
                 if ($(windDegree).txt <= 11 || $(windDegree).txt >= 349) {
                   var direction = `N`;
                 } else if ($(windDegree).txt >= 12 && $(windDegree).txt <= 33) {
@@ -270,8 +283,9 @@ function displayWeather() {
                 } else {
                   direction = `NNW`;
                 }
-                windDegree = `<li class="text-base font-info text-white">Wind Direction: ${direction}</li>`;
-                $(windDegree).appendTo("#day2data");
+                windDegree = `<li class="text-xs font-info list-none">Wind Direction: ${direction}</li>`;
+                $(windDegree).appendTo("#day2details");
+
               } else if (i === 2) {
                 console.log("3");
                 picCurrent = $(picDay3).addClass("h-11").attr(
@@ -284,22 +298,25 @@ function displayWeather() {
                 weatherList3 = $(weatherList3).attr("id", "day3data");
                 $(weatherList3).appendTo("#day3");
 
-                tempHigh = `<li class="text-base font-info text-white">High: ${tempHigh}º</li>`;
+                weatherDetails3 = $(weatherDetails3).attr("id", "day3details")
+                $(weatherDetails3).appendTo("#day3dataBlock")
+
+                tempHigh = `<li class="text-xs font-info list-none">High: ${tempHigh}º</li>`;
                 $(tempHigh).appendTo("#day3data");
 
-                tempLow = `<li class="text-base font-info text-white">Low: ${tempLow}º</li>`;
+                tempLow = `<li class="text-xs font-info list-none">Low: ${tempLow}º</li>`;
                 $(tempLow).appendTo("#day3data");
 
-                conditions = `<li class="text-base font-info text-white">${conditions}</li>`;
-                $(conditions).appendTo("#day3data");
+                conditions = `<li class="text-xs font-info list-none">${conditions}</li>`;
+                $(conditions).appendTo("#day3details");
 
-                humidity = `<li class="text-base font-info text-white">Humidity: ${humidity}%</li>`;
-                $(humidity).appendTo("#day3data");
+                humidity = `<li class="text-xs font-info list-none">Humidity: ${humidity}%</li>`;
+                $(humidity).appendTo("#day3details");
 
-                windSpeed = `<li class="text-base font-info text-white">Wind Speed: ${windSpeed} MPH</li>`;
-                $(windSpeed).appendTo("#day3data");
+                windSpeed = `<li class="text-xs font-info list-none">Wind Speed: ${windSpeed} MPH</li>`;
+                $(windSpeed).appendTo("#day3details");
 
-                windDegree = `<li class="text-base font-info text-white">${windDegree}º</li>`;
+                windDegree = `<li class="text-xs font-info list-none">${windDegree}º</li>`;
                 if ($(windDegree).txt <= 11 || $(windDegree).txt >= 349) {
                   var direction = `N`;
                 } else if ($(windDegree).txt >= 12 && $(windDegree).txt <= 33) {
@@ -366,8 +383,8 @@ function displayWeather() {
                 } else {
                   direction = `NNW`;
                 }
-                windDegree = `<li class="text-base font-info text-white">Wind Direction: ${direction}</li>`;
-                $(windDegree).appendTo("#day3data");
+                windDegree = `<li class="text-xs font-info list-none">Wind Direction: ${direction}</li>`;
+                $(windDegree).appendTo("#day3details");
                 state = $("#userState").val("--");
               }
             }
