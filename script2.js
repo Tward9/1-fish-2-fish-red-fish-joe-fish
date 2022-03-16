@@ -135,10 +135,18 @@ function getFishAPI() {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
+                        $('#modalBodyList').empty();
+                        $('#fishImg').empty();
                         var clickedBtnFish = event.target.textContent;
                         console.log(clickedBtnFish);
-                        console.log(test);
-                        //needs to link id/class of items for information to be able to add to modals
+                        console.log(modalObj);
+                        console.log(modalObj['Species Name']);
+                        $('#fishFacts').text(modalObj['Species Name']);
+                        // $('#modalBodyList').append($('<li/>').text(modalObj.Availability));
+                        var srcUrl = modalObj['Species Illustration Photo']['src'];
+                        var altText = modalObj['Species Illustration Photo']['alt'];
+                        $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
+                        //modalObj['Species Illustration Photo']['src']
                         toggleModal();
                     })
 
@@ -199,10 +207,18 @@ function getFishAPI() {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
+                        $('#modalBodyList').empty();
+                        $('#fishImg').empty();
                         var clickedBtnFish = event.target.textContent;
                         console.log(clickedBtnFish);
-                        console.log(test);
-                        //needs to link id/class of items for information to be able to add to modals
+                        console.log(modalObj);
+                        console.log(modalObj['Species Name']);
+                        $('#fishFacts').text(modalObj['Species Name']);
+                        // $('#modalBodyList').append($('<li/>').text(modalObj.Availability));
+                        var srcUrl = modalObj['Species Illustration Photo']['src'];
+                        var altText = modalObj['Species Illustration Photo']['alt'];
+                        $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
+                        //modalObj['Species Illustration Photo']['src']
                         toggleModal();
                     })
 
@@ -236,7 +252,7 @@ function getFishAPI() {
                 if (fish['NOAA Fisheries Region'] == fishRegion) {
                     var test = fish;
                     console.log(fish['Source'], fish['Species Name']);
-                    if (statePic == 'TX' || statePic == 'LA') {
+                    if (statePic == 'TX' || statePic == 'LA' || statePic == 'MS'){
                         if (fish['Source'].includes('to Texas') ){
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
@@ -253,7 +269,7 @@ function getFishAPI() {
                         }
                         
                     }
-                    if (statePic == 'Al') {
+                    if (statePic == 'AL') {
                         if (fish['Source'].includes('to Texas') ){
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
@@ -373,10 +389,18 @@ function getFishAPI() {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
+                        $('#modalBodyList').empty();
+                        $('#fishImg').empty();
                         var clickedBtnFish = event.target.textContent;
                         console.log(clickedBtnFish);
-                        console.log(test);
-                        //needs to link id/class of items for information to be able to add to modals
+                        console.log(modalObj);
+                        console.log(modalObj['Species Name']);
+                        $('#fishFacts').text(modalObj['Species Name']);
+                        // $('#modalBodyList').append($('<li/>').text(modalObj.Availability));
+                        var srcUrl = modalObj['Species Illustration Photo']['src'];
+                        var altText = modalObj['Species Illustration Photo']['alt'];
+                        $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
+                        //modalObj['Species Illustration Photo']['src']
                         toggleModal();
                     })
 
@@ -411,7 +435,7 @@ function getFishAPI() {
                     var test = fish;
                     console.log(fish['Source'], fish['Species Name']);
                     
-                    if (statePic == 'ME' || statePic == 'VT' || statePic == 'NH') { 
+                    if (statePic == 'ME' || statePic == 'NH') { 
                         if (fish['Source'].includes('from New England') ){
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
@@ -487,7 +511,7 @@ function getFishAPI() {
                             $('item_' + i + '_btn').text('test');
                         }
                     }
-                    if (statePic == 'NJ' || statePic == 'PA' || statePic == 'DE' || statePic == 'MD') { 
+                    if (statePic == 'NJ' || statePic == 'PA' || statePic == 'DE' || statePic == 'MD' || statePic == 'DC') { 
                         if (fish['Source'].includes('from Massachusetts') ){
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
@@ -580,10 +604,18 @@ function getFishAPI() {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
+                        $('#modalBodyList').empty();
+                        $('#fishImg').empty();
                         var clickedBtnFish = event.target.textContent;
                         console.log(clickedBtnFish);
-                        console.log(test);
-                        //needs to link id/class of items for information to be able to add to modals
+                        console.log(modalObj);
+                        console.log(modalObj['Species Name']);
+                        $('#fishFacts').text(modalObj['Species Name']);
+                        // $('#modalBodyList').append($('<li/>').text(modalObj.Availability));
+                        var srcUrl = modalObj['Species Illustration Photo']['src'];
+                        var altText = modalObj['Species Illustration Photo']['alt'];
+                        $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
+                        //modalObj['Species Illustration Photo']['src']
                         toggleModal();
                     })
 
@@ -615,7 +647,7 @@ function getFishAPI() {
 
                 //pacific statements
                 if (fish['NOAA Fisheries Region'] == fishRegion) {
-                    var test = fish;
+                    var modalObj = fish;
                     console.log(fish['Source'], fish['Species Name']);
                     if (statePic == 'HI') {
                         if (fish['Source'].includes('Hawaii') ){
@@ -631,10 +663,19 @@ function getFishAPI() {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
+                        $('#modalBodyList').empty();
+                        $('#fishImg').empty();
                         var clickedBtnFish = event.target.textContent;
                         console.log(clickedBtnFish);
-                        console.log(test);
-                        //needs to link id/class of items for information to be able to add to modals
+                        console.log(modalObj);
+                        console.log(modalObj['Species Name']);
+                        $('#fishFacts').text(modalObj['Species Name']);
+                        console.log(modalObj.population);
+                        $('#population').append($('<li/>').text(modalObj.population));
+                        var srcUrl = modalObj['Species Illustration Photo']['src'];
+                        var altText = modalObj['Species Illustration Photo']['alt'];
+                        $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
+
                         toggleModal();
                     })
 
