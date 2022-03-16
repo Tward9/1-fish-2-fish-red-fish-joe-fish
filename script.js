@@ -55,6 +55,9 @@ function displayWeather() {
       $("#day1data").empty();
       $("#day2data").empty();
       $("#day3data").empty();
+      $("#day1details").empty();
+      $("#day2details").empty();
+      $("#day3details").empty();
       // Uses latitude & longitude values to get a forecast for the location.
       function getWeather() {
         var weatherIcon = `https://openweathermap.org/img/wn/`;
