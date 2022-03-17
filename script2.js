@@ -135,18 +135,29 @@ function getFishAPI() {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
-                        $('#modalBodyList').empty();
+                        $('#population').empty();
                         $('#fishImg').empty();
+                        $('#sciName').empty();
+                        $('#availability').empty();
+                        $('#source').empty();
+                        $('#habitat').empty();
                         var clickedBtnFish = event.target.textContent;
                         console.log(clickedBtnFish);
                         console.log(modalObj);
                         console.log(modalObj['Species Name']);
                         $('#fishFacts').text(modalObj['Species Name']);
-                        // $('#modalBodyList').append($('<li/>').text(modalObj.Availability));
+                        console.log(modalObj['Habitat']);
+                        var availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
+                        var source = modalObj['Source'].replace('<p>', '').replace('</p>', '');
+                        $('#population').append($('<li/>').text(modalObj['Population']));
+                        $('#sciName').append($('<li/>').text(modalObj['Scientific Name']));
+                        $('#availability').append($('<li/>').text(availability));
+                        $('#source').append($('<li/>').text(source));
+                        $('#habitat').append(modalObj['Habitat']);
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-                        //modalObj['Species Illustration Photo']['src']
+
                         toggleModal();
                     })
 
@@ -207,18 +218,29 @@ function getFishAPI() {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
-                        $('#modalBodyList').empty();
+                        $('#population').empty();
                         $('#fishImg').empty();
+                        $('#sciName').empty();
+                        $('#availability').empty();
+                        $('#source').empty();
+                        $('#habitat').empty();
                         var clickedBtnFish = event.target.textContent;
                         console.log(clickedBtnFish);
                         console.log(modalObj);
                         console.log(modalObj['Species Name']);
                         $('#fishFacts').text(modalObj['Species Name']);
-                        // $('#modalBodyList').append($('<li/>').text(modalObj.Availability));
+                        console.log(modalObj['Habitat']);
+                        var availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
+                        var source = modalObj['Source'].replace('<p>', '').replace('</p>', '');
+                        $('#population').append($('<li/>').text(modalObj['Population']));
+                        $('#sciName').append($('<li/>').text(modalObj['Scientific Name']));
+                        $('#availability').append($('<li/>').text(availability));
+                        $('#source').append($('<li/>').text(source));
+                        $('#habitat').append(modalObj['Habitat']);
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-                        //modalObj['Species Illustration Photo']['src']
+
                         toggleModal();
                     })
 
@@ -389,18 +411,29 @@ function getFishAPI() {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
-                        $('#modalBodyList').empty();
+                        $('#population').empty();
                         $('#fishImg').empty();
+                        $('#sciName').empty();
+                        $('#availability').empty();
+                        $('#source').empty();
+                        $('#habitat').empty();
                         var clickedBtnFish = event.target.textContent;
                         console.log(clickedBtnFish);
                         console.log(modalObj);
                         console.log(modalObj['Species Name']);
                         $('#fishFacts').text(modalObj['Species Name']);
-                        // $('#modalBodyList').append($('<li/>').text(modalObj.Availability));
+                        console.log(modalObj['Habitat']);
+                        var availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
+                        var source = modalObj['Source'].replace('<p>', '').replace('</p>', '');
+                        $('#population').append($('<li/>').text(modalObj['Population']));
+                        $('#sciName').append($('<li/>').text(modalObj['Scientific Name']));
+                        $('#availability').append($('<li/>').text(availability));
+                        $('#source').append($('<li/>').text(source));
+                        $('#habitat').append(modalObj['Habitat']);
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-                        //modalObj['Species Illustration Photo']['src']
+
                         toggleModal();
                     })
 
@@ -604,18 +637,29 @@ function getFishAPI() {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
-                        $('#modalBodyList').empty();
+                        $('#population').empty();
                         $('#fishImg').empty();
+                        $('#sciName').empty();
+                        $('#availability').empty();
+                        $('#source').empty();
+                        $('#habitat').empty();
                         var clickedBtnFish = event.target.textContent;
                         console.log(clickedBtnFish);
                         console.log(modalObj);
                         console.log(modalObj['Species Name']);
                         $('#fishFacts').text(modalObj['Species Name']);
-                        // $('#modalBodyList').append($('<li/>').text(modalObj.Availability));
+                        console.log(modalObj['Habitat']);
+                        var availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
+                        var source = modalObj['Source'].replace('<p>', '').replace('</p>', '');
+                        $('#population').append($('<li/>').text(modalObj['Population']));
+                        $('#sciName').append($('<li/>').text(modalObj['Scientific Name']));
+                        $('#availability').append($('<li/>').text(availability));
+                        $('#source').append($('<li/>').text(source));
+                        $('#habitat').append(modalObj['Habitat']);
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-                        //modalObj['Species Illustration Photo']['src']
+
                         toggleModal();
                     })
 
@@ -663,15 +707,25 @@ function getFishAPI() {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
-                        $('#modalBodyList').empty();
+                        $('#population').empty();
                         $('#fishImg').empty();
+                        $('#sciName').empty();
+                        $('#availability').empty();
+                        $('#source').empty();
+                        $('#habitat').empty();
                         var clickedBtnFish = event.target.textContent;
                         console.log(clickedBtnFish);
                         console.log(modalObj);
                         console.log(modalObj['Species Name']);
                         $('#fishFacts').text(modalObj['Species Name']);
-                        console.log(modalObj.population);
-                        $('#population').append($('<li/>').text(modalObj.population));
+                        console.log(modalObj['Habitat']);
+                        var availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
+                        var source = modalObj['Source'].replace('<p>', '').replace('</p>', '');
+                        $('#population').append($('<li/>').text(modalObj['Population']));
+                        $('#sciName').append($('<li/>').text(modalObj['Scientific Name']));
+                        $('#availability').append($('<li/>').text(availability));
+                        $('#source').append($('<li/>').text(source));
+                        $('#habitat').append(modalObj['Habitat']);
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
