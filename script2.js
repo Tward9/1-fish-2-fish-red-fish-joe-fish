@@ -729,7 +729,14 @@ function getFishAPI() {
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-
+                        // add favoriting fish for local storage
+                        $('#favorite').on('click', function (event) {
+                            event.preventDefault();
+                            event.stopImmediatePropagation();
+                            console.log('click');
+                            var saveName = modalObj['Species Name']
+                            localStorage.setItem(saveName, modalObj['Species Name']);
+                        })
                         toggleModal();
                     })
 
@@ -804,37 +811,20 @@ function toggleModal() {
     body.classList.toggle('modal-active')
 }
 
-function getredSnapperAPI() {
-    fetch(redSnapperURL)
-        .then(function (snapperResponse) {
-            console.log("fetched snapper");
-            return snapperResponse.json();
-        })
-        .then(function (redSnapperData) {
-            console.log(redSnapperData);
-            console.log(redSnapperData[0]['Source']);
-            if (redSnapperData[0]['Source'].includes('Texas')) {
-                console.log('logic success');
-            }
-        });
-}
+// function getredSnapperAPI() {
+//     fetch(redSnapperURL)
+//         .then(function (snapperResponse) {
+//             console.log("fetched snapper");
+//             return snapperResponse.json();
+//         })
+//         .then(function (redSnapperData) {
+//             console.log(redSnapperData);
+//             console.log(redSnapperData[0]['Source']);
+//             if (redSnapperData[0]['Source'].includes('Texas')) {
+//                 console.log('logic success');
+//             }
+//         });
+// }
 
 $("#fishBtn").on("click", getFishAPI);
-$("#redSnapperBtn").on("click", getredSnapperAPI);
-
-// var stormglassKey = 'f35fb506-a242-11ec-a97f-0242ac130002-f35fb5b0-a242-11ec-a97f-0242ac130002'
-// function () {
-//     const lat = 58.7984;
-//     const lng = 17.8081;
-//     const params = 'waveHeight,currentDirection,currentSpeed,waterTemperature,wavePeriod'
-//     fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
-//         headers: {
-//             'Authorization': stormglassKey
-//         }
-//     }).then(function (response) {
-//         return response.json();
-//     }).then(function (data) {
-//         console.log(data);
-//         localStorage.setItem('stormglass', data);
-//     })
-// });
+// $("#redSnapperBtn").on("click", getredSnapperAPI);
