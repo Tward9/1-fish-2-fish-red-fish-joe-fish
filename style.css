@@ -25,6 +25,9 @@ button {
     margin-bottom: .5em;
 }
 
+#unfavorite{
+    display: none
+}
 
 module.exports = {
     theme: {
