@@ -16,7 +16,7 @@ function getFishAPI() {
             $('#regionList').empty();
             $('#btnList').empty();
             $('#regionList').append($('<li/>').attr('id', 'regionHeader').text('NOAA Fisheries Region'));
-            $('#btnList').append($('<li/>').attr('id', 'btnHeader').text('Fish Name'));
+            $('#btnList').append($('<li/>').attr('id', 'btnHeader'));
             var alaska = 'AK';
             var greater_atlantic = ['MN', 'ND', 'SD', 'WI', 'IL', 'IN', 'MI', 'OH', 'WV', 'VA', 'MD', 'DE', 'NJ', 'PA', 'NY', 'CT', 'RI', 'MA', 'VT', 'NH', 'ME'];
             var pacific_islands = ['american samoa', 'guam', 'HI', 'northern nariana islands'];
