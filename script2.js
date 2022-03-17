@@ -157,7 +157,33 @@ function getFishAPI() {
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-
+                        if (localStorage.getItem(modalObj['Species Name']) === modalObj['Species Name']) {
+                            $('#favorite').css('display', 'none')
+                            $('#unfavorite').css('display', 'block')
+                        }else{
+                            $('#unfavorite').css('display', 'none')
+                            $('#favorite').css('display', 'block')
+                        }
+                        // add favoriting fish for local storage
+                        $('#favorite').on('click', function (event) {
+                            event.preventDefault();
+                            event.stopImmediatePropagation();
+                            console.log('click');
+                            console.log(localStorage.getItem(modalObj['Species Name']));
+                            $('#favorite').css('display', 'none')
+                            $('#unfavorite').css('display', 'block')
+                            var saveName = modalObj['Species Name']
+                            localStorage.setItem(saveName, modalObj['Species Name']);
+                        })
+                        $('#unfavorite').on('click', function (event) {
+                            event.preventDefault();
+                            event.stopImmediatePropagation();
+                            console.log('click');
+                            $('#unfavorite').css('display', 'none')
+                            $('#favorite').css('display', 'block')
+                            var saveName = modalObj['Species Name']
+                            localStorage.removeItem(saveName, modalObj['Species Name']);
+                        })
                         toggleModal();
                     })
 
@@ -240,7 +266,33 @@ function getFishAPI() {
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-
+                        if (localStorage.getItem(modalObj['Species Name']) === modalObj['Species Name']) {
+                            $('#favorite').css('display', 'none')
+                            $('#unfavorite').css('display', 'block')
+                        }else{
+                            $('#unfavorite').css('display', 'none')
+                            $('#favorite').css('display', 'block')
+                        }
+                        // add favoriting fish for local storage
+                        $('#favorite').on('click', function (event) {
+                            event.preventDefault();
+                            event.stopImmediatePropagation();
+                            console.log('click');
+                            console.log(localStorage.getItem(modalObj['Species Name']));
+                            $('#favorite').css('display', 'none')
+                            $('#unfavorite').css('display', 'block')
+                            var saveName = modalObj['Species Name']
+                            localStorage.setItem(saveName, modalObj['Species Name']);
+                        })
+                        $('#unfavorite').on('click', function (event) {
+                            event.preventDefault();
+                            event.stopImmediatePropagation();
+                            console.log('click');
+                            $('#unfavorite').css('display', 'none')
+                            $('#favorite').css('display', 'block')
+                            var saveName = modalObj['Species Name']
+                            localStorage.removeItem(saveName, modalObj['Species Name']);
+                        })
                         toggleModal();
                     })
 
@@ -433,7 +485,33 @@ function getFishAPI() {
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-
+                        if (localStorage.getItem(modalObj['Species Name']) === modalObj['Species Name']) {
+                            $('#favorite').css('display', 'none')
+                            $('#unfavorite').css('display', 'block')
+                        }else{
+                            $('#unfavorite').css('display', 'none')
+                            $('#favorite').css('display', 'block')
+                        }
+                        // add favoriting fish for local storage
+                        $('#favorite').on('click', function (event) {
+                            event.preventDefault();
+                            event.stopImmediatePropagation();
+                            console.log('click');
+                            console.log(localStorage.getItem(modalObj['Species Name']));
+                            $('#favorite').css('display', 'none')
+                            $('#unfavorite').css('display', 'block')
+                            var saveName = modalObj['Species Name']
+                            localStorage.setItem(saveName, modalObj['Species Name']);
+                        })
+                        $('#unfavorite').on('click', function (event) {
+                            event.preventDefault();
+                            event.stopImmediatePropagation();
+                            console.log('click');
+                            $('#unfavorite').css('display', 'none')
+                            $('#favorite').css('display', 'block')
+                            var saveName = modalObj['Species Name']
+                            localStorage.removeItem(saveName, modalObj['Species Name']);
+                        })
                         toggleModal();
                     })
 
@@ -637,6 +715,9 @@ function getFishAPI() {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
+                        console.log(modalObj['Species Name']);
+                        var species = modalObj['Species Name']
+                        console.log(species);
                         $('#population').empty();
                         $('#fishImg').empty();
                         $('#sciName').empty();
@@ -659,7 +740,35 @@ function getFishAPI() {
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-
+                        if (localStorage.getItem(modalObj['Species Name']) === modalObj['Species Name']) {
+                            $('#favorite').css('display', 'none')
+                            $('#unfavorite').css('display', 'block')
+                        }else{
+                            $('#unfavorite').css('display', 'none')
+                            $('#favorite').css('display', 'block')
+                        }
+                        console.log(modalObj['Species Name']);
+                        // add favoriting fish for local storage
+                        $('#favorite').on('click', function (event) {
+                            event.preventDefault();
+                            event.stopImmediatePropagation();
+                            console.log('click');
+                            console.log(species);
+                            console.log(modalObj['Species Name']);
+                            $('#favorite').css('display', 'none')
+                            $('#unfavorite').css('display', 'block')
+                            var saveName = species
+                            localStorage.setItem(saveName, species);
+                        })
+                        $('#unfavorite').on('click', function (event) {
+                            event.preventDefault();
+                            event.stopImmediatePropagation();
+                            console.log('click');
+                            $('#unfavorite').css('display', 'none')
+                            $('#favorite').css('display', 'block')
+                            var saveName = modalObj['Species Name']
+                            localStorage.removeItem(saveName, modalObj['Species Name']);
+                        })
                         toggleModal();
                     })
 
@@ -729,13 +838,32 @@ function getFishAPI() {
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
+                        if (localStorage.getItem(modalObj['Species Name']) === modalObj['Species Name']) {
+                            $('#favorite').css('display', 'none')
+                            $('#unfavorite').css('display', 'block')
+                        }else{
+                            $('#unfavorite').css('display', 'none')
+                            $('#favorite').css('display', 'block')
+                        }
                         // add favoriting fish for local storage
                         $('#favorite').on('click', function (event) {
                             event.preventDefault();
                             event.stopImmediatePropagation();
                             console.log('click');
+                            console.log(localStorage.getItem(modalObj['Species Name']));
+                            $('#favorite').css('display', 'none')
+                            $('#unfavorite').css('display', 'block')
                             var saveName = modalObj['Species Name']
                             localStorage.setItem(saveName, modalObj['Species Name']);
+                        })
+                        $('#unfavorite').on('click', function (event) {
+                            event.preventDefault();
+                            event.stopImmediatePropagation();
+                            console.log('click');
+                            $('#unfavorite').css('display', 'none')
+                            $('#favorite').css('display', 'block')
+                            var saveName = modalObj['Species Name']
+                            localStorage.removeItem(saveName, modalObj['Species Name']);
                         })
                         toggleModal();
                     })
