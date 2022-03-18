@@ -28,8 +28,8 @@ button {
 #unfavorite{
     display: none
 }
-#favorited{
-    background-color: yellow !important;
+#newSearchBtn{
+    display: none
 }
 module.exports = {
     theme: {
