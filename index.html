@@ -46,11 +46,9 @@
   <link rel="stylesheet" href="style.css" />
  
 </head>
-<body class="object overflow-x-hidden object overflow-x-hidden" style="background-image: url(./Assets/Images/jonathan-zerger-yzzJbqQ1O-Y-unsplash.jpg); width: 100vw; background-position: center bottom;">
+<body class="object overflow-x-hidden" style="background-image: url(./Assets/Images/jonathan-zerger-yzzJbqQ1O-Y-unsplash.jpg); width: 100vw; background-position: center top;">
   <header class="bg-cyan-700">
     <h1 class="text-5xl text-center py-3 font-heading text-white">
-
-
       One fish, Two fish, Red Fish, Oceanblue Fish?
     </h1>
   </header>
@@ -98,15 +96,15 @@
   </div>
 
   <div id="containerHeadings" class="flex flex-row justify-around">
-    <h2 class="text-4xl mx-2.5 font-heading pb-5">3-Day Forecast:</h2>
-    <h2 class="text-4xl mx-2.5 font-heading pb-5">Species:</h2>
+    <h2 class="text-4xl rounded-2xl text-yellow-200 mx-2.5 font-info mb-5 p-2 bg-zinc-800 bg-opacity-40">3-Day Forecast:</h2>
+    <h2 class="text-4xl rounded-2xl text-yellow-200 mx-2.5 font-info mb-5 p-2 bg-zinc-800 bg-opacity-40">Species:</h2>
   </div>
 
   <div id="container" class="w-7/8 flex flex-row justify-between">
     <div id="weatherContainer" class="mx-2 w-1/2 flex flex-col gap-2 flex-wrap text-white">
       <div id="weatherRow1" class="flex flex-row gap-2">
         <div id="day1"
-          class="dayBlock bg-cyan-700 text-xs lg:text-2xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
+        class="dayBlock bg-gradient-to-r from-teal-300 via-teal-800 to-teal-300 text-xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
         </div>
         <script>
           var currentDate = dayjs().format(`ddd MMM D, YYYY`);
@@ -143,12 +141,12 @@
         </div>
       </div>
     </div>
-    <article id="fishData" class="text-4xl w-1/2 flex flex-col font-heading items-start">
+    <article id="fishData" class="text-4xl w-1/2 flex flex-col font-heading items-start bg-zinc-800 bg-opacity-60">
       <table id="fishTable" class="text-base font-info">
         <tbody>
           <tr>
             <td>
-              <ul id="btnList" class="text-center grid grid-cols-2 gap-1 items-start"></ul>
+              <ul id="btnList" class="text-center text-white grid grid-cols-2 gap-1 items-start"></ul>
             </td>
           </tr>
         </tbody>
