@@ -113,12 +113,12 @@
           document.getElementById("day1").innerHTML = `${currentDate}`;
         </script>
         <div id="day1details"
-        class="dayBlock justify-center bg-cyan-700 text-1xl lg:text-2xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
+        class="dayBlock justify-center bg-cyan-700 text-xs lg:text-2xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
         </div>
       </div>
       <div id="weatherRow2" class="flex flex-row gap-2">
         <div id="day2"
-          class="dayBlock bg-cyan-700 text-1xl font-info pt-2.5 object-center text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
+          class="dayBlock bg-cyan-700 text-xs lg:text-2xl font-info pt-2.5 object-center text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
         </div>
         <script>
           var tomorrowDate = dayjs().add(1, `d`).format(`ddd MMM D, YYYY`);
@@ -130,7 +130,7 @@
       </div>
       <div id="weatherRow3" class="flex flex-row gap-2">
         <div id="day3"
-          class="dayBlock bg-cyan-700 text-1xl font-info pt-2.5 object-right text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
+          class="dayBlock bg-cyan-700 text-xs lg:text-2xl font-info pt-2.5 object-right text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
         </div>
         <script>
           var dayAfterTomorrowDate = dayjs()
@@ -139,7 +139,7 @@
           document.getElementById("day3").innerHTML = `${dayAfterTomorrowDate}`;
         </script>
         <div id="day3details"
-        class="dayBlock justify-center bg-cyan-700 text-1xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
+        class="dayBlock justify-center bg-cyan-700 text-xs lg:text-2xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
         </div>
       </div>
     </div>
