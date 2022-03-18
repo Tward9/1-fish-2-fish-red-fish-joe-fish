@@ -47,8 +47,8 @@
  
 </head>
 <body class="object overflow-x-hidden" style="background-image: url(./Assets/Images/sri-jalasutram-e2U-VYSY7ro-unsplash.jpg); background-position: center; background-size: cover;">
-  <header class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-50">
-    <h1 class="text-5xl text-center py-3 font-heading text-white">
+  <header class="bg-teal-100 drop-shadow-1xl">
+    <h1 class="text-5xl text-center py-3 font-heading text-black drop-shadow-2xl">
       One fish, Two fish, Red Fish, Oceanblue Fish?
     </h1>
   </header>
@@ -96,7 +96,7 @@
   </div>
 
   <div id="containerHeadings" class="flex flex-row justify-around">
-    <h2 class="text-4xl text-center rounded-2xl text-amber-200 mx-2.5 font-info mb-5 p-2 bg-zinc-800 bg-opacity-40">3-Day Forecast:</h2>
+    <h2 class="text-4xl text-center rounded-2xl text-amber-200 mx-2.5 font-info mb-5 p-2 bg-zinc-800 bg-opacity-40 drop-shadow-md	">3-Day Forecast:</h2>
     <h2 class="text-4xl text-center rounded-2xl text-amber-200 mx-2.5 font-info mb-5 p-2 bg-zinc-800 bg-opacity-40">Species:</h2>
   </div>
 
@@ -104,31 +104,31 @@
     <div id="weatherContainer" class="mx-2 w-1/2 flex flex-col gap-2 flex-wrap text-white">
       <div id="weatherRow1" class="flex flex-row gap-2">
         <div id="day1"
-        class="dayBlock bg-teal-800 text-xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
+        class="dayBlock bg-[#876B7B] text-xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
         </div>
         <script>
           var currentDate = dayjs().format(`ddd MMM D, YYYY`);
           document.getElementById("day1").innerHTML = `${currentDate}`;
         </script>
         <div id="day1details"
-        class="dayBlock justify-center bg-cyan-700 text-xs lg:text-2xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
+        class="dayBlock justify-center bg-[#876B7B] text-xs lg:text-2xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
         </div>
       </div>
       <div id="weatherRow2" class="flex flex-row gap-2">
         <div id="day2"
-          class="dayBlock bg-cyan-700 text-xs lg:text-2xl font-info pt-2.5 object-center text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
+          class="dayBlock bg-[#876B7B] text-xl lg:text-2xl font-info pt-2.5 object-center text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
         </div>
         <script>
           var tomorrowDate = dayjs().add(1, `d`).format(`ddd MMM D, YYYY`);
           document.getElementById("day2").innerHTML = `${tomorrowDate}`;
         </script>
         <div id="day2details"
-        class="dayBlock justify-center bg-cyan-700 text-1xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
+        class="dayBlock justify-center bg-[#876B7B] text-xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
         </div>
       </div>
       <div id="weatherRow3" class="flex flex-row gap-2">
         <div id="day3"
-          class="dayBlock bg-cyan-700 text-xs lg:text-2xl font-info pt-2.5 object-right text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
+          class="dayBlock bg-[#876B7B] text-xl lg:text-2xl font-info pt-2.5 object-right text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
         </div>
         <script>
           var dayAfterTomorrowDate = dayjs()
@@ -137,7 +137,7 @@
           document.getElementById("day3").innerHTML = `${dayAfterTomorrowDate}`;
         </script>
         <div id="day3details"
-        class="dayBlock justify-center bg-cyan-700 text-xs lg:text-2xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
+        class="dayBlock justify-center bg-[#876B7B] text-xs lg:text-2xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
         </div>
       </div>
     </div>
