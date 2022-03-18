@@ -18,6 +18,11 @@
   <script>
     tailwind.config = {
       theme: {
+        screens: {
+            'Phone': '480px',
+            'sPhone': '380px',
+            'xsPhone': '350px',
+          },
         extend: {
           fontFamily: {
             sansita: ['"Sansita Swashed"', 'cursive'],
@@ -35,11 +40,6 @@
             'silver': '#ecebff',
             'bubble-gum': '#ff77e9',
             'bermuda': '#78dcca',
-          },
-          screens: {
-            iPhone12Pro: '480px',
-            iPhoneSE: '380px',
-            iPhone5: '350px',
           },
         },
       },
@@ -101,9 +101,9 @@
   </div>
 <div class="">
 
-  <div id="containerHeadings" class="flex flex-row justify-around hidden">
-    <h2 class="text-4xl text-center rounded-2xl text-amber-200 mx-2.5 font-info mb-5 p-2 bg-zinc-800 bg-opacity-50 drop-shadow-md w-1/3">3-Day Forecast:</h2>
-    <h2 class="text-4xl text-center rounded-2xl text-amber-200 mx-2.5 font-info mb-5 p-2 bg-zinc-800 bg-opacity-50 w-1/3">Species:</h2>
+  <div id="containerHeadings" class="flex flex-row justify-around hidden align-middle">
+    <h2 class="text-2xl flex flex-col text-center rounded-2xl text-amber-200 Phone:text-4xl mx-2.5 font-info mb-5 p-2 bg-zinc-800 bg-opacity-50 drop-shadow-md w-1/3">3-Day Forecast:</h2>
+    <h2 class="text-2xl flex flex-col text-center rounded-2xl text-amber-200 Phone:text-4xl mx-2.5 font-info mb-5 p-2 bg-zinc-800 bg-opacity-50 w-1/3 justify-center">Species:</h2>
   </div>
 
 
