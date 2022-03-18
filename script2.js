@@ -223,7 +223,7 @@ function getFishAPI() {
                             console.log(modalObj['Species Name']);
                             console.log(clickedBtnFish);
                             //needs to apply new style to button to show favorite
-                            $(clickedBtnFish).addClass('favorited')
+                            $(clickedBtnFish).addClass('favorited bg-amber-200 text-black')
                             //add something to save favorited status for when buttons displayed
                             $('#favorite').css('display', 'none')
                             $('#unfavorite').css('display', 'block')
