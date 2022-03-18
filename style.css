@@ -28,7 +28,9 @@ button {
 #unfavorite{
     display: none
 }
-
+#favorited{
+    background-color: yellow !important;
+}
 module.exports = {
     theme: {
         screen: {

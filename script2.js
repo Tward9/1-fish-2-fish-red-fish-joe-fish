@@ -1,8 +1,12 @@
 var fishURL = "https://cors-anywhere-bc.herokuapp.com/https://www.fishwatch.gov/api/species";
 var redSnapperURL = 'https://cors-anywhere-bc.herokuapp.com/https://www.fishwatch.gov/api/species/red-snapper';
+var headings = $("#containerHeadings");
+var dataContainer = $("#container");
 
 //querry fishwatch api
 function getFishAPI() {
+    $(headings).removeClass("hidden");
+    $(dataContainer).removeClass("hidden");
     var statePic = $("#userState").val();
 
     fetch(fishURL)
@@ -45,11 +49,11 @@ function getFishAPI() {
                 // console.log(i);
                 //id shows as "item_undefined_n"
                 // $('#nameList').append($('<li/>').attr("id", 'item_' + i + '_n').addClass('item_' + i).text(fish['Species Name']));
-                
+
                 //west coast statements
                 if (fish['NOAA Fisheries Region'] == fishRegion) {
                     var test = fish;
-                    console.log(fish['Source'], fish['Species Name']);
+                    // console.log(fish['Source'], fish['Species Name']);
                     if (statePic == 'CA') {
                         if (fish['Source'].includes('Washington to California')) {
                             console.log('test');
@@ -58,35 +62,35 @@ function getFishAPI() {
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('from California') ){
+                        if (fish['Source'].includes('from California')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('from the Bering Sea') ){
+                        if (fish['Source'].includes('from the Bering Sea')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('Alaska to northern Baja') ){
+                        if (fish['Source'].includes('Alaska to northern Baja')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('from Washington, Oregon, and California') ){
+                        if (fish['Source'].includes('from Washington, Oregon, and California')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('off Washington, Oregon, and California') ){
+                        if (fish['Source'].includes('off Washington, Oregon, and California')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
@@ -102,28 +106,28 @@ function getFishAPI() {
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('from the Bering Sea') ){
+                        if (fish['Source'].includes('from the Bering Sea')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('Alaska to northern Baja') ){
+                        if (fish['Source'].includes('Alaska to northern Baja')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('from Washington, Oregon, and California') ){
+                        if (fish['Source'].includes('from Washington, Oregon, and California')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('off Washington, Oregon, and California') ){
+                        if (fish['Source'].includes('off Washington, Oregon, and California')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
@@ -135,20 +139,45 @@ function getFishAPI() {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
+                        console.log(modalObj['Species Name']);
+                        console.log(species);
                         $('#population').empty();
                         $('#fishImg').empty();
                         $('#sciName').empty();
                         $('#availability').empty();
                         $('#location').empty();
                         $('#habitat').empty();
-                        // var clickedBtnFish = event.target.textContent;
-                        // console.log(clickedBtnFish);
+                        var clickedBtnFish = event.target;
+                        console.log(clickedBtnFish);
                         // console.log(modalObj);
                         // console.log(modalObj['Species Name']);
                         $('#fishFacts').text(modalObj['Species Name']);
                         // console.log(modalObj['Population Status']);
-                        var availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
-                        var location = modalObj['Location'];
+                        // saveName = '';
+                        var saveName = '';
+                        var species = '';
+                        var sciName = '';
+                        var popStat = '';
+                        var availability = '';
+                        var location = '';
+                        var habitat = '';
+                        var saveName = species
+                        var saveObj = {
+                            Species: species,
+                            ScientificName: sciName,
+                            Population: popStat,
+                            Availability: availability,
+                            Location: location,
+                            Habitat: habitat
+                        }
+                        console.log(saveObj);
+                        var noSpace = species.replace(/ /g, '');
+                        species = modalObj['Species Name'];
+                        sciName = modalObj['Scientific Name'];
+                        popStat = modalObj['Population'];
+                        availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
+                        location = modalObj['Location'];
+                        habitat = modalObj['Habitat'];
                         $('#population').append($('<li/>').text(modalObj['Population']));
                         $('#sciName').append($('<li/>').text(modalObj['Scientific Name']));
                         $('#availability').append($('<li/>').text(availability));
@@ -157,35 +186,72 @@ function getFishAPI() {
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-                        if (localStorage.getItem(modalObj['Species Name']) === modalObj['Species Name']) {
+                        // console.log(JSON.parse(localStorage.getItem(modalObj['Species Name'])).Species);
+                        var savedObj = JSON.parse(localStorage.getItem(modalObj['Species Name']) || "{}").Species;
+                        console.log(savedObj);
+                        if (savedObj === modalObj['Species Name']) {
                             $('#favorite').css('display', 'none')
                             $('#unfavorite').css('display', 'block')
-                        }else{
+                        } else {
                             $('#unfavorite').css('display', 'none')
                             $('#favorite').css('display', 'block')
                         }
+                        console.log(modalObj['Species Name']);
+                        console.log(species);
+                        saveName = species;
+                        saveObj = {
+                            Species: species,
+                            ScientificName: sciName,
+                            Population: popStat,
+                            Availability: availability,
+                            Location: location,
+                            Habitat: habitat
+                        }
+                        console.log(saveObj);
+                        noSpace = species.replace(/ /g, '');
                         // add favoriting fish for local storage
-                        $('#favorite').on('click', function (event) {
+                        $('#favorite').on('click', favoriting)
+                        $('#unfavorite').on('click', unfavoriting)
+                        function favoriting(event) {
                             event.preventDefault();
                             event.stopImmediatePropagation();
+                            // localStorage.clear();
                             console.log('click');
-                            console.log(localStorage.getItem(modalObj['Species Name']));
+                            console.log(species);
+                            console.log(modalObj['Species Name']);
+                            console.log(clickedBtnFish);
+                            //needs to apply new style to button to show favorite
+                            $(clickedBtnFish).addClass('favorited')
+                            //add something to save favorited status for when buttons displayed
                             $('#favorite').css('display', 'none')
                             $('#unfavorite').css('display', 'block')
-                            var saveName = modalObj['Species Name']
-                            localStorage.setItem(saveName, modalObj['Species Name']);
-                        })
-                        $('#unfavorite').on('click', function (event) {
-                            event.preventDefault();
-                            event.stopImmediatePropagation();
+                            console.log(saveName);
+                            console.log(saveObj);
+                            // $('#favoriteFish').append($('<button/>',
+                            // { text: species, id: noSpace+'Btn', class: 'modal-open' }));
+                            localStorage.setItem(saveName, JSON.stringify(saveObj));
+                            // console.log($('#'+noSpace+'Btn'));
+                            // localStorage.setItem(noSpace+'Btn', ($('#'+noSpace+'Btn')));
+                            // $('#' + noSpace + 'Btn').on('click', function (ev) {
+                            //     ev.preventDefault();
+                            //     ev.stopImmediatePropagation();
+                            //     console.log('click');
+                            //     toggleModal();
+                            // })
+                        }
+                        function unfavoriting(ev) {
+                            ev.preventDefault();
+                            ev.stopImmediatePropagation();
                             console.log('click');
-                            $('#unfavorite').css('display', 'none')
-                            $('#favorite').css('display', 'block')
-                            var saveName = modalObj['Species Name']
+                            $('#unfavorite').css('display', 'none');
+                            $('#favorite').css('display', 'block');
+                            var saveName = modalObj['Species Name'];
                             localStorage.removeItem(saveName, modalObj['Species Name']);
-                        })
+                            var noSpace = saveName.replace(/ /g, '')
+                            $('#' + noSpace + 'Btn').remove();
+                        }
                         toggleModal();
-                    })
+                    });
 
                     const overlay = document.querySelector('.modal-overlay');
                     overlay.addEventListener('click', toggleModal());
@@ -215,23 +281,23 @@ function getFishAPI() {
                 //Alaska Statements
                 if (fish['NOAA Fisheries Region'] == fishRegion) {
                     var test = fish;
-                    console.log(fish['Source'], fish['Species Name']);
+                    // console.log(fish['Source'], fish['Species Name']);
                     if (statePic == 'AK') {
-                        if (fish['Source'].includes('in the Bering Sea') ){
+                        if (fish['Source'].includes('in the Bering Sea')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('in Alaska') ){
+                        if (fish['Source'].includes('in Alaska')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('from Alaska') ){
+                        if (fish['Source'].includes('from Alaska')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
@@ -239,25 +305,50 @@ function getFishAPI() {
                             $('item_' + i + '_btn').text('test');
                         }
                     }
-                    
+
                     $('.modal-open').on('click', function (event) {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
+                        console.log(modalObj['Species Name']);
+                        console.log(species);
                         $('#population').empty();
                         $('#fishImg').empty();
                         $('#sciName').empty();
                         $('#availability').empty();
                         $('#location').empty();
                         $('#habitat').empty();
-                        // var clickedBtnFish = event.target.textContent;
-                        // console.log(clickedBtnFish);
+                        var clickedBtnFish = event.target;
+                        console.log(clickedBtnFish);
                         // console.log(modalObj);
                         // console.log(modalObj['Species Name']);
                         $('#fishFacts').text(modalObj['Species Name']);
                         // console.log(modalObj['Population Status']);
-                        var availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
-                        var location = modalObj['Location'];
+                        // saveName = '';
+                        var saveName = '';
+                        var species = '';
+                        var sciName = '';
+                        var popStat = '';
+                        var availability = '';
+                        var location = '';
+                        var habitat = '';
+                        var saveName = species
+                        var saveObj = {
+                            Species: species,
+                            ScientificName: sciName,
+                            Population: popStat,
+                            Availability: availability,
+                            Location: location,
+                            Habitat: habitat
+                        }
+                        console.log(saveObj);
+                        var noSpace = species.replace(/ /g, '');
+                        species = modalObj['Species Name'];
+                        sciName = modalObj['Scientific Name'];
+                        popStat = modalObj['Population'];
+                        availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
+                        location = modalObj['Location'];
+                        habitat = modalObj['Habitat'];
                         $('#population').append($('<li/>').text(modalObj['Population']));
                         $('#sciName').append($('<li/>').text(modalObj['Scientific Name']));
                         $('#availability').append($('<li/>').text(availability));
@@ -266,35 +357,72 @@ function getFishAPI() {
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-                        if (localStorage.getItem(modalObj['Species Name']) === modalObj['Species Name']) {
+                        // console.log(JSON.parse(localStorage.getItem(modalObj['Species Name'])).Species);
+                        var savedObj = JSON.parse(localStorage.getItem(modalObj['Species Name']) || "{}").Species;
+                        console.log(savedObj);
+                        if (savedObj === modalObj['Species Name']) {
                             $('#favorite').css('display', 'none')
                             $('#unfavorite').css('display', 'block')
-                        }else{
+                        } else {
                             $('#unfavorite').css('display', 'none')
                             $('#favorite').css('display', 'block')
                         }
+                        console.log(modalObj['Species Name']);
+                        console.log(species);
+                        saveName = species;
+                        saveObj = {
+                            Species: species,
+                            ScientificName: sciName,
+                            Population: popStat,
+                            Availability: availability,
+                            Location: location,
+                            Habitat: habitat
+                        }
+                        console.log(saveObj);
+                        noSpace = species.replace(/ /g, '');
                         // add favoriting fish for local storage
-                        $('#favorite').on('click', function (event) {
+                        $('#favorite').on('click', favoriting)
+                        $('#unfavorite').on('click', unfavoriting)
+                        function favoriting(event) {
                             event.preventDefault();
                             event.stopImmediatePropagation();
+                            // localStorage.clear();
                             console.log('click');
-                            console.log(localStorage.getItem(modalObj['Species Name']));
+                            console.log(species);
+                            console.log(modalObj['Species Name']);
+                            console.log(clickedBtnFish);
+                            //needs to apply new style to button to show favorite
+                            $(clickedBtnFish).addClass('favorited')
+                            //add something to save favorited status for when buttons displayed
                             $('#favorite').css('display', 'none')
                             $('#unfavorite').css('display', 'block')
-                            var saveName = modalObj['Species Name']
-                            localStorage.setItem(saveName, modalObj['Species Name']);
-                        })
-                        $('#unfavorite').on('click', function (event) {
-                            event.preventDefault();
-                            event.stopImmediatePropagation();
+                            console.log(saveName);
+                            console.log(saveObj);
+                            // $('#favoriteFish').append($('<button/>',
+                            // { text: species, id: noSpace+'Btn', class: 'modal-open' }));
+                            localStorage.setItem(saveName, JSON.stringify(saveObj));
+                            // console.log($('#'+noSpace+'Btn'));
+                            // localStorage.setItem(noSpace+'Btn', ($('#'+noSpace+'Btn')));
+                            // $('#' + noSpace + 'Btn').on('click', function (ev) {
+                            //     ev.preventDefault();
+                            //     ev.stopImmediatePropagation();
+                            //     console.log('click');
+                            //     toggleModal();
+                            // })
+                        }
+                        function unfavoriting(ev) {
+                            ev.preventDefault();
+                            ev.stopImmediatePropagation();
                             console.log('click');
-                            $('#unfavorite').css('display', 'none')
-                            $('#favorite').css('display', 'block')
-                            var saveName = modalObj['Species Name']
+                            $('#unfavorite').css('display', 'none');
+                            $('#favorite').css('display', 'block');
+                            var saveName = modalObj['Species Name'];
                             localStorage.removeItem(saveName, modalObj['Species Name']);
-                        })
+                            var noSpace = saveName.replace(/ /g, '')
+                            $('#' + noSpace + 'Btn').remove();
+                        }
                         toggleModal();
-                    })
+                    });
 
                     const overlay = document.querySelector('.modal-overlay');
                     overlay.addEventListener('click', toggleModal());
@@ -325,71 +453,71 @@ function getFishAPI() {
                 //Southeast Statements
                 if (fish['NOAA Fisheries Region'] == fishRegion) {
                     var test = fish;
-                    console.log(fish['Source'], fish['Species Name']);
-                    if (statePic == 'TX' || statePic == 'LA' || statePic == 'MS'){
-                        if (fish['Source'].includes('to Texas') ){
+                    // console.log(fish['Source'], fish['Species Name']);
+                    if (statePic == 'TX' || statePic == 'LA' || statePic == 'MS') {
+                        if (fish['Source'].includes('to Texas')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('to the Gulf') ){
+                        if (fish['Source'].includes('to the Gulf')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        
+
                     }
                     if (statePic == 'AL') {
-                        if (fish['Source'].includes('to Texas') ){
+                        if (fish['Source'].includes('to Texas')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('to the Gulf') ){
+                        if (fish['Source'].includes('to the Gulf')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('to Alabama') ){
+                        if (fish['Source'].includes('to Alabama')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        
+
                     }
                     if (statePic == 'FL' || statePic == 'GA') {
-                        if (fish['Source'].includes('to Texas') ){
+                        if (fish['Source'].includes('to Texas')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('to the Gulf') ){
+                        if (fish['Source'].includes('to the Gulf')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('to Alabama') ){
+                        if (fish['Source'].includes('to Alabama')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('from South Carolina') ){
+                        if (fish['Source'].includes('from South Carolina')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
@@ -398,85 +526,110 @@ function getFishAPI() {
                         }
                     }
                     if (statePic == 'SC') {
-                        if (fish['Source'].includes('to Texas') ){
+                        if (fish['Source'].includes('to Texas')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('to the Gulf') ){
+                        if (fish['Source'].includes('to the Gulf')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('to Alabama') ){
+                        if (fish['Source'].includes('to Alabama')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('off Sourth Carolina') ){
+                        if (fish['Source'].includes('off Sourth Carolina')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('from South Carolina') ){
+                        if (fish['Source'].includes('from South Carolina')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
-                        } 
+                        }
                     }
                     if (statePic == 'NC') {
-                        if (fish['Source'].includes('to Texas') ){
+                        if (fish['Source'].includes('to Texas')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('to the Gulf') ){
+                        if (fish['Source'].includes('to the Gulf')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('to Alabama') ){
+                        if (fish['Source'].includes('to Alabama')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        
+
                     }
-                    
+
                     $('.modal-open').on('click', function (event) {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
+                        console.log(modalObj['Species Name']);
+                        console.log(species);
                         $('#population').empty();
                         $('#fishImg').empty();
                         $('#sciName').empty();
                         $('#availability').empty();
                         $('#location').empty();
                         $('#habitat').empty();
-                        // var clickedBtnFish = event.target.textContent;
-                        // console.log(clickedBtnFish);
+                        var clickedBtnFish = event.target;
+                        console.log(clickedBtnFish);
                         // console.log(modalObj);
                         // console.log(modalObj['Species Name']);
                         $('#fishFacts').text(modalObj['Species Name']);
                         // console.log(modalObj['Population Status']);
-                        var availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
-                        var location = modalObj['Location'];
+                        // saveName = '';
+                        var saveName = '';
+                        var species = '';
+                        var sciName = '';
+                        var popStat = '';
+                        var availability = '';
+                        var location = '';
+                        var habitat = '';
+                        var saveName = species
+                        var saveObj = {
+                            Species: species,
+                            ScientificName: sciName,
+                            Population: popStat,
+                            Availability: availability,
+                            Location: location,
+                            Habitat: habitat
+                        }
+                        console.log(saveObj);
+                        var noSpace = species.replace(/ /g, '');
+                        species = modalObj['Species Name'];
+                        sciName = modalObj['Scientific Name'];
+                        popStat = modalObj['Population'];
+                        availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
+                        location = modalObj['Location'];
+                        habitat = modalObj['Habitat'];
                         $('#population').append($('<li/>').text(modalObj['Population']));
                         $('#sciName').append($('<li/>').text(modalObj['Scientific Name']));
                         $('#availability').append($('<li/>').text(availability));
@@ -485,35 +638,72 @@ function getFishAPI() {
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-                        if (localStorage.getItem(modalObj['Species Name']) === modalObj['Species Name']) {
+                        // console.log(JSON.parse(localStorage.getItem(modalObj['Species Name'])).Species);
+                        var savedObj = JSON.parse(localStorage.getItem(modalObj['Species Name']) || "{}").Species;
+                        console.log(savedObj);
+                        if (savedObj === modalObj['Species Name']) {
                             $('#favorite').css('display', 'none')
                             $('#unfavorite').css('display', 'block')
-                        }else{
+                        } else {
                             $('#unfavorite').css('display', 'none')
                             $('#favorite').css('display', 'block')
                         }
+                        console.log(modalObj['Species Name']);
+                        console.log(species);
+                        saveName = species;
+                        saveObj = {
+                            Species: species,
+                            ScientificName: sciName,
+                            Population: popStat,
+                            Availability: availability,
+                            Location: location,
+                            Habitat: habitat
+                        }
+                        console.log(saveObj);
+                        noSpace = species.replace(/ /g, '');
                         // add favoriting fish for local storage
-                        $('#favorite').on('click', function (event) {
+                        $('#favorite').on('click', favoriting)
+                        $('#unfavorite').on('click', unfavoriting)
+                        function favoriting(event) {
                             event.preventDefault();
                             event.stopImmediatePropagation();
+                            // localStorage.clear();
                             console.log('click');
-                            console.log(localStorage.getItem(modalObj['Species Name']));
+                            console.log(species);
+                            console.log(modalObj['Species Name']);
+                            console.log(clickedBtnFish);
+                            //needs to apply new style to button to show favorite
+                            $(clickedBtnFish).addClass('favorited')
+                            //add something to save favorited status for when buttons displayed
                             $('#favorite').css('display', 'none')
                             $('#unfavorite').css('display', 'block')
-                            var saveName = modalObj['Species Name']
-                            localStorage.setItem(saveName, modalObj['Species Name']);
-                        })
-                        $('#unfavorite').on('click', function (event) {
-                            event.preventDefault();
-                            event.stopImmediatePropagation();
+                            console.log(saveName);
+                            console.log(saveObj);
+                            // $('#favoriteFish').append($('<button/>',
+                            // { text: species, id: noSpace+'Btn', class: 'modal-open' }));
+                            localStorage.setItem(saveName, JSON.stringify(saveObj));
+                            // console.log($('#'+noSpace+'Btn'));
+                            // localStorage.setItem(noSpace+'Btn', ($('#'+noSpace+'Btn')));
+                            // $('#' + noSpace + 'Btn').on('click', function (ev) {
+                            //     ev.preventDefault();
+                            //     ev.stopImmediatePropagation();
+                            //     console.log('click');
+                            //     toggleModal();
+                            // })
+                        }
+                        function unfavoriting(ev) {
+                            ev.preventDefault();
+                            ev.stopImmediatePropagation();
                             console.log('click');
-                            $('#unfavorite').css('display', 'none')
-                            $('#favorite').css('display', 'block')
-                            var saveName = modalObj['Species Name']
+                            $('#unfavorite').css('display', 'none');
+                            $('#favorite').css('display', 'block');
+                            var saveName = modalObj['Species Name'];
                             localStorage.removeItem(saveName, modalObj['Species Name']);
-                        })
+                            var noSpace = saveName.replace(/ /g, '')
+                            $('#' + noSpace + 'Btn').remove();
+                        }
                         toggleModal();
-                    })
+                    });
 
                     const overlay = document.querySelector('.modal-overlay');
                     overlay.addEventListener('click', toggleModal());
@@ -544,47 +734,17 @@ function getFishAPI() {
                 //greater atlantic statements
                 if (fish['NOAA Fisheries Region'] == fishRegion) {
                     var test = fish;
-                    console.log(fish['Source'], fish['Species Name']);
-                    
-                    if (statePic == 'ME' || statePic == 'NH') { 
-                        if (fish['Source'].includes('from New England') ){
+                    // console.log(fish['Source'], fish['Species Name']);
+
+                    if (statePic == 'ME' || statePic == 'NH') {
+                        if (fish['Source'].includes('from New England')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('from Maine') ){
-                            console.log('test');
-                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
-                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
-                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
-                            $('item_' + i + '_btn').text('test');
-                        }
-                    }
-                    if (statePic == 'MA' || statePic == 'RI' || statePic == 'NY') { 
-                        if (fish['Source'].includes('from New England') ){
-                            console.log('test');
-                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
-                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
-                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
-                            $('item_' + i + '_btn').text('test');
-                        }
-                        if (fish['Source'].includes('from Maine') ){
-                            console.log('test');
-                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
-                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
-                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
-                            $('item_' + i + '_btn').text('test');
-                        }
-                        if (fish['Source'].includes('from Massachusetts') ){
-                            console.log('test');
-                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
-                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
-                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
-                            $('item_' + i + '_btn').text('test');
-                        }
-                        if (fish['Source'].includes('Southern Massachusetts') ){
+                        if (fish['Source'].includes('from Maine')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
@@ -592,80 +752,29 @@ function getFishAPI() {
                             $('item_' + i + '_btn').text('test');
                         }
                     }
-                    if (statePic == 'CT') { 
-                        if (fish['Source'].includes('from New England') ){
+                    if (statePic == 'MA' || statePic == 'RI' || statePic == 'NY') {
+                        if (fish['Source'].includes('from New England')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('from Maine') ){
+                        if (fish['Source'].includes('from Maine')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('from Massachusetts') ){
+                        if (fish['Source'].includes('from Massachusetts')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('Southern Massachusetts') ){
-                            console.log('test');
-                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
-                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
-                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
-                            $('item_' + i + '_btn').text('test');
-                        }
-                    }
-                    if (statePic == 'NJ' || statePic == 'PA' || statePic == 'DE' || statePic == 'MD' || statePic == 'DC') { 
-                        if (fish['Source'].includes('from Massachusetts') ){
-                            console.log('test');
-                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
-                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
-                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
-                            $('item_' + i + '_btn').text('test');
-                        }
-                        if (fish['Source'].includes('to New Jersey') ){
-                            console.log('test');
-                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
-                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
-                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
-                            $('item_' + i + '_btn').text('test');
-                        }
-                        if (fish['Source'].includes('and New Jersey') ){
-                            console.log('test');
-                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
-                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
-                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
-                            $('item_' + i + '_btn').text('test');
-                        }
-                        if (fish['Source'].includes('to Virginia') ){
-                            console.log('test');
-                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
-                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
-                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
-                            $('item_' + i + '_btn').text('test');
-                        }
-                        if (fish['Source'].includes('to North Carolina') ){
-                            console.log('test');
-                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
-                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
-                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
-                            $('item_' + i + '_btn').text('test');
-                        }
-                        if (fish['Source'].includes('to South Carolina') ){
-                            console.log('test');
-                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
-                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
-                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
-                            $('item_' + i + '_btn').text('test');
-                        }
-                        if (fish['Source'].includes('to the Gulf') ){
+                        if (fish['Source'].includes('Southern Massachusetts')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
@@ -673,36 +782,29 @@ function getFishAPI() {
                             $('item_' + i + '_btn').text('test');
                         }
                     }
-                    if (statePic == 'VA') { 
-                        if (fish['Source'].includes('from Massachusetts') ){
+                    if (statePic == 'CT') {
+                        if (fish['Source'].includes('from New England')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('to Virginia') ){
+                        if (fish['Source'].includes('from Maine')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('to North Carolina') ){
+                        if (fish['Source'].includes('from Massachusetts')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
                                 { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
                             $('item_' + i + '_btn').text('test');
                         }
-                        if (fish['Source'].includes('to South Carolina') ){
-                            console.log('test');
-                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
-                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
-                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
-                            $('item_' + i + '_btn').text('test');
-                        }
-                        if (fish['Source'].includes('to the Gulf') ){
+                        if (fish['Source'].includes('Southern Massachusetts')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
@@ -710,13 +812,100 @@ function getFishAPI() {
                             $('item_' + i + '_btn').text('test');
                         }
                     }
-                    
+                    if (statePic == 'NJ' || statePic == 'PA' || statePic == 'DE' || statePic == 'MD' || statePic == 'DC') {
+                        if (fish['Source'].includes('from Massachusetts')) {
+                            console.log('test');
+                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
+                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
+                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
+                            $('item_' + i + '_btn').text('test');
+                        }
+                        if (fish['Source'].includes('to New Jersey')) {
+                            console.log('test');
+                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
+                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
+                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
+                            $('item_' + i + '_btn').text('test');
+                        }
+                        if (fish['Source'].includes('and New Jersey')) {
+                            console.log('test');
+                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
+                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
+                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
+                            $('item_' + i + '_btn').text('test');
+                        }
+                        if (fish['Source'].includes('to Virginia')) {
+                            console.log('test');
+                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
+                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
+                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
+                            $('item_' + i + '_btn').text('test');
+                        }
+                        if (fish['Source'].includes('to North Carolina')) {
+                            console.log('test');
+                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
+                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
+                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
+                            $('item_' + i + '_btn').text('test');
+                        }
+                        if (fish['Source'].includes('to South Carolina')) {
+                            console.log('test');
+                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
+                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
+                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
+                            $('item_' + i + '_btn').text('test');
+                        }
+                        if (fish['Source'].includes('to the Gulf')) {
+                            console.log('test');
+                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
+                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
+                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
+                            $('item_' + i + '_btn').text('test');
+                        }
+                    }
+                    if (statePic == 'VA') {
+                        if (fish['Source'].includes('from Massachusetts')) {
+                            console.log('test');
+                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
+                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
+                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
+                            $('item_' + i + '_btn').text('test');
+                        }
+                        if (fish['Source'].includes('to Virginia')) {
+                            console.log('test');
+                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
+                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
+                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
+                            $('item_' + i + '_btn').text('test');
+                        }
+                        if (fish['Source'].includes('to North Carolina')) {
+                            console.log('test');
+                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
+                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
+                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
+                            $('item_' + i + '_btn').text('test');
+                        }
+                        if (fish['Source'].includes('to South Carolina')) {
+                            console.log('test');
+                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
+                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
+                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
+                            $('item_' + i + '_btn').text('test');
+                        }
+                        if (fish['Source'].includes('to the Gulf')) {
+                            console.log('test');
+                            $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
+                            $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
+                                { text: fish['Species Name'], id: 'btn_' + i, class: 'modal-open' }).addClass('item_' + i)));
+                            $('item_' + i + '_btn').text('test');
+                        }
+                    }
+
                     $('.modal-open').on('click', function (event) {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
                         console.log(modalObj['Species Name']);
-                        var species = modalObj['Species Name']
                         console.log(species);
                         $('#population').empty();
                         $('#fishImg').empty();
@@ -724,14 +913,37 @@ function getFishAPI() {
                         $('#availability').empty();
                         $('#location').empty();
                         $('#habitat').empty();
-                        // var clickedBtnFish = event.target.textContent;
-                        // console.log(clickedBtnFish);
+                        var clickedBtnFish = event.target;
+                        console.log(clickedBtnFish);
                         // console.log(modalObj);
                         // console.log(modalObj['Species Name']);
                         $('#fishFacts').text(modalObj['Species Name']);
                         // console.log(modalObj['Population Status']);
-                        var availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
-                        var location = modalObj['Location'];
+                        // saveName = '';
+                        var saveName = '';
+                        var species = '';
+                        var sciName = '';
+                        var popStat = '';
+                        var availability = '';
+                        var location = '';
+                        var habitat = '';
+                        var saveName = species
+                        var saveObj = {
+                            Species: species,
+                            ScientificName: sciName,
+                            Population: popStat,
+                            Availability: availability,
+                            Location: location,
+                            Habitat: habitat
+                        }
+                        console.log(saveObj);
+                        var noSpace = species.replace(/ /g, '');
+                        species = modalObj['Species Name'];
+                        sciName = modalObj['Scientific Name'];
+                        popStat = modalObj['Population'];
+                        availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
+                        location = modalObj['Location'];
+                        habitat = modalObj['Habitat'];
                         $('#population').append($('<li/>').text(modalObj['Population']));
                         $('#sciName').append($('<li/>').text(modalObj['Scientific Name']));
                         $('#availability').append($('<li/>').text(availability));
@@ -740,37 +952,72 @@ function getFishAPI() {
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-                        if (localStorage.getItem(modalObj['Species Name']) === modalObj['Species Name']) {
+                        // console.log(JSON.parse(localStorage.getItem(modalObj['Species Name'])).Species);
+                        var savedObj = JSON.parse(localStorage.getItem(modalObj['Species Name']) || "{}").Species;
+                        console.log(savedObj);
+                        if (savedObj === modalObj['Species Name']) {
                             $('#favorite').css('display', 'none')
                             $('#unfavorite').css('display', 'block')
-                        }else{
+                        } else {
                             $('#unfavorite').css('display', 'none')
                             $('#favorite').css('display', 'block')
                         }
                         console.log(modalObj['Species Name']);
+                        console.log(species);
+                        saveName = species;
+                        saveObj = {
+                            Species: species,
+                            ScientificName: sciName,
+                            Population: popStat,
+                            Availability: availability,
+                            Location: location,
+                            Habitat: habitat
+                        }
+                        console.log(saveObj);
+                        noSpace = species.replace(/ /g, '');
                         // add favoriting fish for local storage
-                        $('#favorite').on('click', function (event) {
+                        $('#favorite').on('click', favoriting)
+                        $('#unfavorite').on('click', unfavoriting)
+                        function favoriting(event) {
                             event.preventDefault();
                             event.stopImmediatePropagation();
+                            // localStorage.clear();
                             console.log('click');
                             console.log(species);
                             console.log(modalObj['Species Name']);
+                            console.log(clickedBtnFish);
+                            //needs to apply new style to button to show favorite
+                            $(clickedBtnFish).addClass('favorited')
+                            //add something to save favorited status for when buttons displayed
                             $('#favorite').css('display', 'none')
                             $('#unfavorite').css('display', 'block')
-                            var saveName = species
-                            localStorage.setItem(saveName, species);
-                        })
-                        $('#unfavorite').on('click', function (event) {
-                            event.preventDefault();
-                            event.stopImmediatePropagation();
+                            console.log(saveName);
+                            console.log(saveObj);
+                            // $('#favoriteFish').append($('<button/>',
+                            // { text: species, id: noSpace+'Btn', class: 'modal-open' }));
+                            localStorage.setItem(saveName, JSON.stringify(saveObj));
+                            // console.log($('#'+noSpace+'Btn'));
+                            // localStorage.setItem(noSpace+'Btn', ($('#'+noSpace+'Btn')));
+                            // $('#' + noSpace + 'Btn').on('click', function (ev) {
+                            //     ev.preventDefault();
+                            //     ev.stopImmediatePropagation();
+                            //     console.log('click');
+                            //     toggleModal();
+                            // })
+                        }
+                        function unfavoriting(ev) {
+                            ev.preventDefault();
+                            ev.stopImmediatePropagation();
                             console.log('click');
-                            $('#unfavorite').css('display', 'none')
-                            $('#favorite').css('display', 'block')
-                            var saveName = modalObj['Species Name']
+                            $('#unfavorite').css('display', 'none');
+                            $('#favorite').css('display', 'block');
+                            var saveName = modalObj['Species Name'];
                             localStorage.removeItem(saveName, modalObj['Species Name']);
-                        })
+                            var noSpace = saveName.replace(/ /g, '')
+                            $('#' + noSpace + 'Btn').remove();
+                        }
                         toggleModal();
-                    })
+                    });
 
                     const overlay = document.querySelector('.modal-overlay');
                     overlay.addEventListener('click', toggleModal());
@@ -801,9 +1048,9 @@ function getFishAPI() {
                 //pacific statements
                 if (fish['NOAA Fisheries Region'] == fishRegion) {
                     var modalObj = fish;
-                    console.log(fish['Source'], fish['Species Name']);
+                    // console.log(fish['Source'], fish['Species Name']);
                     if (statePic == 'HI') {
-                        if (fish['Source'].includes('Hawaii') ){
+                        if (fish['Source'].includes('Hawaii')) {
                             console.log('test');
                             $('#regionList').append($('<li/>').attr("id", 'item_' + i + '_r').addClass('item_' + i).text(fish['NOAA Fisheries Region']));
                             $('#btnList').append($('<li/>').attr("id", 'item_' + i + '_btn', 'class', 'modal_open', 'item_' + i).append($('<button/>',
@@ -811,25 +1058,50 @@ function getFishAPI() {
                             $('item_' + i + '_btn').text('test');
                         }
                     }
-                    
+
                     $('.modal-open').on('click', function (event) {
                         event.stopImmediatePropagation();
                         event.preventDefault();
                         console.log('clicked');
+                        console.log(modalObj['Species Name']);
+                        console.log(species);
                         $('#population').empty();
                         $('#fishImg').empty();
                         $('#sciName').empty();
                         $('#availability').empty();
                         $('#location').empty();
                         $('#habitat').empty();
-                        // var clickedBtnFish = event.target.textContent;
-                        // console.log(clickedBtnFish);
+                        var clickedBtnFish = event.target;
+                        console.log(clickedBtnFish);
                         // console.log(modalObj);
                         // console.log(modalObj['Species Name']);
                         $('#fishFacts').text(modalObj['Species Name']);
                         // console.log(modalObj['Population Status']);
-                        var availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
-                        var location = modalObj['Location'];
+                        // saveName = '';
+                        var saveName = '';
+                        var species = '';
+                        var sciName = '';
+                        var popStat = '';
+                        var availability = '';
+                        var location = '';
+                        var habitat = '';
+                        var saveName = species
+                        var saveObj = {
+                            Species: species,
+                            ScientificName: sciName,
+                            Population: popStat,
+                            Availability: availability,
+                            Location: location,
+                            Habitat: habitat
+                        }
+                        console.log(saveObj);
+                        var noSpace = species.replace(/ /g, '');
+                        species = modalObj['Species Name'];
+                        sciName = modalObj['Scientific Name'];
+                        popStat = modalObj['Population'];
+                        availability = modalObj['Availability'].replace('<p>', '').replace('</p>', '');
+                        location = modalObj['Location'];
+                        habitat = modalObj['Habitat'];
                         $('#population').append($('<li/>').text(modalObj['Population']));
                         $('#sciName').append($('<li/>').text(modalObj['Scientific Name']));
                         $('#availability').append($('<li/>').text(availability));
@@ -838,35 +1110,72 @@ function getFishAPI() {
                         var srcUrl = modalObj['Species Illustration Photo']['src'];
                         var altText = modalObj['Species Illustration Photo']['alt'];
                         $('#fishImg').append($('<img/>').attr('src', srcUrl, 'alt', altText));
-                        if (localStorage.getItem(modalObj['Species Name']) === modalObj['Species Name']) {
+                        // console.log(JSON.parse(localStorage.getItem(modalObj['Species Name'])).Species);
+                        var savedObj = JSON.parse(localStorage.getItem(modalObj['Species Name']) || "{}").Species;
+                        console.log(savedObj);
+                        if (savedObj === modalObj['Species Name']) {
                             $('#favorite').css('display', 'none')
                             $('#unfavorite').css('display', 'block')
-                        }else{
+                        } else {
                             $('#unfavorite').css('display', 'none')
                             $('#favorite').css('display', 'block')
                         }
+                        console.log(modalObj['Species Name']);
+                        console.log(species);
+                        saveName = species;
+                        saveObj = {
+                            Species: species,
+                            ScientificName: sciName,
+                            Population: popStat,
+                            Availability: availability,
+                            Location: location,
+                            Habitat: habitat
+                        }
+                        console.log(saveObj);
+                        noSpace = species.replace(/ /g, '');
                         // add favoriting fish for local storage
-                        $('#favorite').on('click', function (event) {
+                        $('#favorite').on('click', favoriting)
+                        $('#unfavorite').on('click', unfavoriting)
+                        function favoriting(event) {
                             event.preventDefault();
                             event.stopImmediatePropagation();
+                            // localStorage.clear();
                             console.log('click');
-                            console.log(localStorage.getItem(modalObj['Species Name']));
+                            console.log(species);
+                            console.log(modalObj['Species Name']);
+                            console.log(clickedBtnFish);
+                            //needs to apply new style to button to show favorite
+                            $(clickedBtnFish).addClass('favorited')
+                            //add something to save favorited status for when buttons displayed
                             $('#favorite').css('display', 'none')
                             $('#unfavorite').css('display', 'block')
-                            var saveName = modalObj['Species Name']
-                            localStorage.setItem(saveName, modalObj['Species Name']);
-                        })
-                        $('#unfavorite').on('click', function (event) {
-                            event.preventDefault();
-                            event.stopImmediatePropagation();
+                            console.log(saveName);
+                            console.log(saveObj);
+                            // $('#favoriteFish').append($('<button/>',
+                            // { text: species, id: noSpace+'Btn', class: 'modal-open' }));
+                            localStorage.setItem(saveName, JSON.stringify(saveObj));
+                            // console.log($('#'+noSpace+'Btn'));
+                            // localStorage.setItem(noSpace+'Btn', ($('#'+noSpace+'Btn')));
+                            // $('#' + noSpace + 'Btn').on('click', function (ev) {
+                            //     ev.preventDefault();
+                            //     ev.stopImmediatePropagation();
+                            //     console.log('click');
+                            //     toggleModal();
+                            // })
+                        }
+                        function unfavoriting(ev) {
+                            ev.preventDefault();
+                            ev.stopImmediatePropagation();
                             console.log('click');
-                            $('#unfavorite').css('display', 'none')
-                            $('#favorite').css('display', 'block')
-                            var saveName = modalObj['Species Name']
+                            $('#unfavorite').css('display', 'none');
+                            $('#favorite').css('display', 'block');
+                            var saveName = modalObj['Species Name'];
                             localStorage.removeItem(saveName, modalObj['Species Name']);
-                        })
+                            var noSpace = saveName.replace(/ /g, '')
+                            $('#' + noSpace + 'Btn').remove();
+                        }
                         toggleModal();
-                    })
+                    });
 
                     const overlay = document.querySelector('.modal-overlay');
                     overlay.addEventListener('click', toggleModal());
