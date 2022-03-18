@@ -104,14 +104,14 @@
     <div id="weatherContainer" class="mx-2 w-1/2 flex flex-col gap-2 flex-wrap text-white">
       <div id="weatherRow1" class="flex flex-row gap-2">
         <div id="day1"
-        class="dayBlock bg-[#876B7B] text-xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
+        class="dayBlock bg-[#876B7B] text-xl lg:text-2xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
         </div>
         <script>
           var currentDate = dayjs().format(`ddd MMM D, YYYY`);
           document.getElementById("day1").innerHTML = `${currentDate}`;
         </script>
         <div id="day1details"
-        class="dayBlock justify-center bg-[#876B7B] text-xs lg:text-2xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
+        class="dayBlock justify-center bg-[#876B7B] text-xl lg:text-2xl font-info pt-2.5 object-left text-center border-solid border-4 border-gray-900 rounded-lg h-40 flex flex-wrap flex-col flex-1">
         </div>
       </div>
       <div id="weatherRow2" class="flex flex-row gap-2">
@@ -141,7 +141,7 @@
         </div>
       </div>
     </div>
-    <article id="fishData" class="rounded-lg text-4xl w-1/2 flex flex-col font-heading items-start bg-zinc-800 bg-opacity-60">
+    <article id="fishData" class="rounded-lg text-4xl w-1/2 flex flex-col font-heading justify-center-top bg-zinc-800 bg-opacity-60">
       <table id="fishTable" class="text-base font-info">
         <tbody>
           <tr>
