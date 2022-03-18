@@ -1,8 +1,12 @@
 var fishURL = "https://cors-anywhere-bc.herokuapp.com/https://www.fishwatch.gov/api/species";
 var redSnapperURL = 'https://cors-anywhere-bc.herokuapp.com/https://www.fishwatch.gov/api/species/red-snapper';
+var headings = $("#containerHeadings");
+var dataContainer = $("#container");
 
 //querry fishwatch api
 function getFishAPI() {
+    $(headings).removeClass("hidden");
+    $(dataContainer).removeClass("hidden");
     var statePic = $("#userState").val();
 
     fetch(fishURL)
