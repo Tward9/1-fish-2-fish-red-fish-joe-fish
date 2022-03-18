@@ -1393,4 +1393,17 @@ function toggleModal() {
 }
 
 
-$("#fishBtn").on("click", getFishAPI);
+$("#searchButton").on("click", getFishAPI);
+$('#searchButton').on('click', function (event) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    $('#search').addClass("hidden");
+    $('#newSearchBtn').css('display', 'block');
+})
+$('#newSearchBtn').on('click', function (event) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    $('#search').removeClass("hidden");
+    $('#newSearch').css('display', 'none');
+    location.reload();
+})
