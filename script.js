@@ -84,7 +84,7 @@ function displayWeather() {
                 var conditions =
                   weatherResponse.daily[i].weather[0].description;
                 var humidity = weatherResponse.daily[i].humidity;
-                var windSpeed = weatherResponse.daily[i].wind_speed;
+                var windSpeed = weatherResponse.daily[i].wind_speed.toFixed();
                 var windDegree = weatherResponse.daily[i].wind_deg;
 
                 if (i === 0) {
@@ -197,7 +197,7 @@ function displayWeather() {
                   } else {
                     direction = `NNW`;
                   }
-                  windDegree = `<li class="text-xs lg:text-2xl font-info list-none">Wind Directon: ${direction}</li>`;
+                  windDegree = `<li class="text-xs lg:text-2xl font-info list-none">${direction}</li>`;
                   $(windDegree).appendTo("#day1details");
                 } else if (i === 1) {
                   console.log("2");
