@@ -430,4 +430,4 @@ function displayWeather() {
   cityName = $("#userSearch").val("");
 }
 
-$("#fishBtn").on("click", displayWeather);
+$("#searchButton").on("click", displayWeather);
