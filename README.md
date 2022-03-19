@@ -6,6 +6,11 @@ This application lets the user select a costal location, then displays weather i
 <br>
 
 ## Instructions for Use
+Access the site at this link:
+<br>
+[One Fish Two Fish Red Fish Go Fish?](https://p1t3-canjoefish.github.io/1-fish-2-fish-red-fish-joe-fish/)
+<br>
+<br>
     1. Select a state from the drop down
 ![State Selection](/Assets/Images/StateSelect.png)
 
