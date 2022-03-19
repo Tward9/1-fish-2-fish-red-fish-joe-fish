@@ -11,7 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alata&family=Indie+Flower&family=Sansita+Swashed&display=swap"
     rel="stylesheet">
-  <!-- Tailwind -- USE AFTER DEFINING UTILITY CLASSES-->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
   <script src="tailwind.config.js"></script>
@@ -19,6 +18,7 @@
     tailwind.config = {
       theme: {
         screens: {
+            'lgTablet': '900px',
             'Phone': '480px',
             'sPhone': '380px',
             'xsPhone': '350px',
@@ -54,16 +54,12 @@
 <body class="object overflow-x-hidden" style="background-image: url(./Assets/Images/sri-jalasutram-e2U-VYSY7ro-unsplash.jpg); background-attachment: fixed; background-position: center; background-size: cover;">
   <header class="flex flex-col bg-[#F1ACA2] border-0 border-slate-900 shadow-inner shadow-zinc-700 items-center">
     <img src="./Assets/Images/one fish, two fish, red fish, go fish-logos_transparent.png" alt="Logo Image" class="h-32 w-32">
-    <!-- <h1 id="mainHeading" class="text-5xl text-center mb-2.5 py-5 font-heading text-slate-900 drop-shadow-2xl">
-      One fish, Two fish, Red Fish, Go Fish?
-    </h1> -->
   </header>
   <div id="newSearch" class="w-full pt-2.5 flex flex-col items-center">
-    <button id="newSearchBtn" class="rounded-lg p-5 text-xl bg-[#4A476B] border-solid border-2 border-gray-900 text-white">New Search</button>
+    <button id="newSearchBtn" class="rounded-lg p-2 my-3 text-xl bg-[#4A476B] border-solid border-2 border-gray-900 text-white">New Search</button>
   </div>
   <div id="search" class="w-full pt-2.5 flex flex-col items-center justify-center">
     <!-- insert relevant elements -->
-    <!-- <h2 class="text-2xl font-info rounded-2xl text-amber-200 mx-2.5 font-info m-5 p-2 bg-zinc-800 bg-opacity-50">Is today a good day to go ocean fishing?</h2> -->
     <p class="text-base text-center font-info rounded-2xl text-amber-200 mx-2.5 my-2.5 font-info p-2 bg-zinc-800 bg-opacity-50"><span class="text-3xl block pb-2.5">Do you live near the ocean?</span> Enter your state and city and we'll show you some species you can fish for. We'll even give you the weather so you know when to go.</p>
     <select id="userState" class="m-2.5 rounded-lg shadow-sm focus:outline-none focus:border-blue-300 focus:ring-1">
       <option value="--" selected>SELECT A STATE</option>
@@ -102,19 +98,15 @@
       </button>
     </div>
   </div>
-
-
   <div id="containerHeadings" class="flex flex-row justify-around hidden align-middle">
     <h2 class="text-2xl flex flex-col text-center rounded-2xl text-amber-200 Phone:text-4xl mx-2.5 font-info mb-5 p-2 bg-zinc-800 bg-opacity-50 drop-shadow-md w-1/3">3-Day Forecast:</h2>
     <h2 class="text-2xl flex flex-col text-center rounded-2xl text-amber-200 Phone:text-4xl mx-2.5 font-info mb-5 p-2 bg-zinc-800 bg-opacity-50 w-1/3 justify-center">Species:</h2>
   </div>
-
-
   <div id="container" class="w-7/8 flex flex-row justify-between pb-10 px-1 hidden">
     <div id="weatherContainer" class="mx-2 w-1/2 flex flex-col gap-2 flex-wrap text-slate-900">
       <div id="weatherRow1" class="flex flex-row gap-2">
         <div id="day1"
-        class="dayBlock bg-[#F1ACA2] text-xs Phone:text-2xl font-info pt-2.5 object-left text-center border-solid border-2 border-slate-900 ring-1 ring-zinc-800 ring-inset ring-offset-1 rounded-lg h-40 flex flex-wrap flex-col flex-1 shadow-inner shadow-zinc-700">
+        class="dayBlock bg-[#F1ACA2] text-xs lgTablet:text-2xl font-info pt-2.5 object-left text-center border-solid border-2 border-slate-900 ring-1 ring-zinc-800 ring-inset ring-offset-1 rounded-lg h-40 flex flex-wrap flex-col flex-1 shadow-inner shadow-zinc-700">
         </div>
         <script>
           var currentDate = dayjs().format(`ddd MMM D, YYYY`);
@@ -126,7 +118,7 @@
       </div>
       <div id="weatherRow2" class="flex flex-row gap-2">
         <div id="day2"
-        class="dayBlock bg-[#F1ACA2] text-xs Phone:text-2xl font-info pt-2.5 object-left text-center border-solid border-2 border-slate-900 ring-1 ring-zinc-800 ring-inset ring-offset-1 rounded-lg h-40 flex flex-wrap flex-col flex-1 shadow-inner shadow-zinc-700">
+        class="dayBlock bg-[#F1ACA2] text-xs lgTablet:text-2xl font-info pt-2.5 object-left text-center border-solid border-2 border-slate-900 ring-1 ring-zinc-800 ring-inset ring-offset-1 rounded-lg h-40 flex flex-wrap flex-col flex-1 shadow-inner shadow-zinc-700">
         </div>
         <script>
           var tomorrowDate = dayjs().add(1, `d`).format(`ddd MMM D, YYYY`);
@@ -138,7 +130,7 @@
       </div>
       <div id="weatherRow3" class="flex flex-row gap-2">
         <div id="day3"
-        class="dayBlock bg-[#F1ACA2] text-xs Phone:text-2xl font-info pt-2.5 object-left text-center border-solid border-2 border-slate-900 ring-1 ring-zinc-800 ring-inset ring-offset-1 rounded-lg h-40 flex flex-wrap flex-col flex-1 shadow-inner shadow-zinc-700">
+        class="dayBlock bg-[#F1ACA2] text-xs lgTablet:text-2xl font-info pt-2.5 object-left text-center border-solid border-2 border-slate-900 ring-1 ring-zinc-800 ring-inset ring-offset-1 rounded-lg h-40 flex flex-wrap flex-col flex-1 shadow-inner shadow-zinc-700">
         </div>
         <script>
           var dayAfterTomorrowDate = dayjs()
@@ -151,7 +143,8 @@
         </div>
       </div>
     </div>
-    <article id="fishData" class="rounded-lg flex flex-col text-4xl w-1/2 font-heading justify-center bg-zinc-800 bg-opacity-60">
+    <article id="fishData" class="rounded-lg flex flex-col text-4xl w-1/2 font-heading justify-start bg-zinc-800 bg-opacity-60">
+      <p class="font-info text-xs Phone:text-2xl text-center text-amber-200 align-middle">Click a fish for details.</p>
       <table id="fishTable" class="text-base font-info justify-center">
         <tbody>
           <tr>
@@ -178,9 +171,7 @@
         </svg>
         <span class="text-sm">(Esc)</span>
       </div>
-      <!-- Add margin if you want to see some of the overlay behind the modal-->
       <div class="modal-content py-4 text-left px-6">
-        <!--Title-->
         <div class="flex justify-between items-center pb-3">
           <p id="fishFacts" class="text-1xl font-info font-bold"></p>
         </div>
@@ -219,16 +210,14 @@
               </ul>
           </section>
         </div>
-        <!--Footer-->
         <div class="flex justify-end pt-2">
-
-          <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">
+          <button class="modal-close mx-2 px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">
             Close
           </button>
-          <button id="favorite" class="px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">
+          <button id="favorite" class="mx-2 px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">
             Favorite
           </button>
-          <button id="unfavorite" class="px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">
+          <button id="unfavorite" class="mx-2 px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">
             Unfavorite
           </button>
         </div>
@@ -238,6 +227,5 @@
 
   <script src="script.js"></script>
   <script src="script2.js"></script>
-  <!-- <script src="script3.js"></script> -->
 </body>
 </html>
