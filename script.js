@@ -1,5 +1,4 @@
 //url for fishwatch api
-//can set to update with specific species in the future
 var fishURL =
   "https://cors-anywhere-bc.herokuapp.com/https://www.fishwatch.gov/api/species";
 var redSnapperURL =
